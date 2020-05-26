@@ -4,6 +4,12 @@ Given a singly linked list, return another linked list
 that is the reverse of the first.
 """
 
+"""
+Tips: Here __iter__(self) is used to iterate the values of the linked list.
+If you don't want to use this, simple get the head of the linked list
+    and traverse in the simple way. E.g. llist.head.value
+"""
+
 
 class Node:
     def __init__(self, value):
@@ -84,3 +90,5 @@ for value in [4, 2, 5, 1, -3, 0]:
 flipped = reverse(llist)
 is_correct = list(flipped) == list([0, -3, 1, 5, 2, 4]) and list(llist) == list(reverse(flipped))
 print("Pass" if is_correct else "Fail")
+
+# print(llist.head.value)
