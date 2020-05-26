@@ -76,12 +76,12 @@ def append(self, value):
 
 LinkedList.append = append
 
-# Test append - 1
-linked_list.append(3)
+# Test append - 1 item
 linked_list.prepend(2)
+linked_list.append(3)
 assert linked_list.to_list() == [2, 1, 3], f"list contents: {linked_list.to_list()}"
 
-# Test append - 2
+# Test append - 2 items
 linked_list = LinkedList()
 linked_list.append(1)
 assert linked_list.to_list() == [1], f"list contents: {linked_list.to_list()}"
@@ -166,7 +166,7 @@ assert value == 2, f"list contents: {linked_list.to_list()}"
 assert linked_list.head.value == 1, f"list contents: {linked_list.to_list()}"
 
 
-# #### Task 6. Write definition of `insert()` function and test its functionality
+# #### Task 6. Write definition of `insert()` function and test it
 def insert(self, value, pos):
     """ Insert value at pos position in the list. If pos is larger than the
         length of the list, append to the end of the list. """
