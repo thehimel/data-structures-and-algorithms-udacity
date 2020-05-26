@@ -1,0 +1,52 @@
+TC: Time Complexity
+SC: Space Complexity
+n = number of input
+N = order of the algorithm
+
+In all the problems Space Complexity is same: O(n)
+Because it creates texts and calls lists depending on the input.
+It iterates 2 times from 1 to n, thus O(2n). O(2n) scales by O(n).
+
+Task0.py
+TC: O(1)
+It only prints the data from the first and last of the list which is not depended on the size of the input.
+Thus the order is constant.
+
+Task1.py
+TC: O(n^2)
+For texts and calls, it iterates through the input and also checks the unique_numbers list.
+That means, for each iterator of the for loop, the check must be performed.
+For 2 lists it perfomrs total O(2n^2). O(2n^2) scales by O(n^2)
+
+Task2.py
+TC: O(n^2)
+With the for loop, it iterates through the input from 1 to n. And inside that for loop there is a search operation.
+That means, for each iterator of the for loop, the search must be performed.
+Thus the order is quadratic.
+
+Task3.py
+Part A
+TC: O(n^2)
+- With the for loop, it iterates through the input from 1 to n. And inside that for loop there is a search operation.
+That means, for each iterator of the for loop, the search must be performed. The order is O(n^2) for this operation.
+- The python sorted() operation takes O(nlogn).
+- To print, it iterates through the list and takes O(n)
+Combinining all the operation: N = O(n^2 + nlogn + n)
+We know, while calculating Big O notation we need to consider the highest possible order.
+By scalling, N = O(n^2)
+
+Part B
+TC: O(n)
+With the for loop, it iterates through the input from 1 to n. 
+Thus it's order is linear.
+
+Task4.py
+TC: O(n^2)
+- For calls with the for loop, it iterates through the input from 1 to n. And inside the for loop, a search operation is also there to create the unique list.
+Thus for calls, the order is O(n^2).
+- In the same way, for texts, the oder is O(n^2)
+- To print, it iterates through the list and takes O(n)
+Combinining all the operation: N = O(n^2 + n^2 + n) = O(2n^2 + n)
+We can scale 2n^2 to n^2. Now, N = O(n^2 + n)
+We know, while calculating Big O notation we need to consider the highest possible order.
+Thus, N = O(n^2)
