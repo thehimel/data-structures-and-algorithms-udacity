@@ -13,7 +13,9 @@ output = 1 3 5 2 4 6
 parameter: head of the given linked list
 return: head of the updated list with all even nodes placed after odd nodes
 
-Solution
+'''
+# Solution
+'''
 The Idea: Traverse the given LinkedList, and build two sub-lists: EVEN and ODD.
 For this purpose, we will use four helper references, that denotes starting and
 current ending of EVEN and ODD sub-list respectively.
