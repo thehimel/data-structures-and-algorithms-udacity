@@ -54,7 +54,6 @@ def skip_i_delete_j(head, i, j):
 
     # Traverse - Loop untill there are Nodes available in the LinkedList
     while current:
-
         '''skip (i - 1) nodes'''
         for _ in range(i - 1):
             if current is None:
@@ -74,13 +73,12 @@ def skip_i_delete_j(head, i, j):
         previous.next = current
 
     # Loop ends
-
     return head
 
 
 # Test
 def create_linked_list(arr):
-    if len(arr)==0:
+    if len(arr) == 0:
         return None
     head = Node(arr[0])
     tail = head
@@ -113,7 +111,7 @@ def test_function(test_case):
             index += 1
             temp = temp.next
         print("Pass")
-    except Exception as e:
+    except Exception:
         print("Fail")
 
 
