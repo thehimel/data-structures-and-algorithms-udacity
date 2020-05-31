@@ -54,12 +54,11 @@ def add_one(arr):
     # Traverse in reverse direction starting from the end of the list
     # The argument of range() functions are:
     # starting index, ending index (non exclusive),
-    # and the increment/decrement size
+    #   and the increment/decrement size
     for i in range(len(arr), 0, -1):
-
         # The "digit" denotes the updated Unit, Tens,
         #   and then Hunderd  position iteratively
-        digit = borrow + arr[i - 1]
+        digit = arr[i - 1] + borrow
 
         '''
         The "borrow" will be carried to the next left digit
@@ -105,9 +104,9 @@ FOR LOOP BEGINS
             NO need to check other digits on the left of current digit
 FOR LOOP ENDS
 
-Append  [0] to the beginning of the original arr. Now arr = [0, 1, 2, 4]
+Append [0] to the beginning of the original arr. Now arr = [0, 1, 2, 4]
 In this final updated arr, find a position from where to return the list.
-    This position (index) =  1
+    This position (index) = 1
 Return  [1, 2, 4]
 
 '''
@@ -140,7 +139,7 @@ Append [1] to the beginning of the original arr. Now arr = [1, 0, 0, 0]
 
 In this final updated arr, find a position from where to return the list.
     This position (index) = 0
-Return  [1, 0, 0, 0]
+Return [1, 0, 0, 0]
 '''
 
 
