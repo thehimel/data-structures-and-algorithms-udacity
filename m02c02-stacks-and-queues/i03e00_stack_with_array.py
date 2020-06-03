@@ -28,7 +28,7 @@ class Stack:
         return self.num_elements == 0
 
     def _create_arr(self, arr_size):
-        return [0 for _ in range(arr_size)]
+        return [None for _ in range(arr_size)]
 
     def _increase_stack_capacity(self):
         self.arr += self._create_arr(2 * len(self.arr))
