@@ -1,72 +1,52 @@
-# Recursive Solution by Udacity (Less Readable)
+# Recusive DFS Solution by LeetCode user https://leetcode.com/caikehe/ (More Readable)
+# https://leetcode.com/problems/permutations/discuss/18296/Simple-Python-solution-(DFS)
+
 """
-Args: myList: list of items to be permuted
-Returns: compound list: list of permutation with each permuted item
-    being represented by a list
-"""
-
-# We will use `deepcopy()` function from the `copy` module
-import copy
-
-
-def permute(inputList):
-    # A compound list to be returned
-    finalCompoundList = []
-
-    # Terminaiton / Base condition
-    if len(inputList) == 0:
-        finalCompoundList.append([])
-
-    else:
-        # Pick one element to be permuted
-        first_element = inputList[0]
-        # Take rest of the elements in a list
-        rest_list = inputList[1:]
-
-        # Recursive function call
-        sub_compoundList = permute(rest_list)
-
-        # Iterate through all lists of the compoundList
-        #   returned from previous call
-        for aList in sub_compoundList:
-
-            # Permuted the `first_element` at all positions
-            #   0, 1, 2 ... len(aList) in each iteration
-            for j in range(0, len(aList) + 1):
-
-                # A normal copy/assignment will change aList[j] element
-                bList = copy.deepcopy(aList)
-
-                # A new list with size +1 as compared to aList is created
-                #   by inserting the `first_element` at position j in bList
-                bList.insert(j, first_element)
-
-                # Append the newly created list to the finalCompoundList
-                finalCompoundList.append(bList)
-
-    return finalCompoundList
-
-
-# Test Cases
-"""
-Return True if output and expected_output
-contains the same lists, False otherwise.
-
-Note that the ordering of the list is not important.
-
-Examples:
-    check_output([ [0, 1], [1, 0] ] ], [ [1, 0], [0, 1] ]) returns True
-
-Args:
-    output(list): list of list
-    expected_output(list): list of list
-
-Returns:
-    bool
+:type nums: List[int]
+:rtype: List[List[int]]
 """
 
 
+def permute(nums):
+    res = []
+    dfs(nums, [], res)
+    return res
+
+
+def dfs(nums, path, res):
+    print(f'\t--- dfs(nums = {nums}, path = {path}, res = {res})')
+    if not nums:
+        res.append(path)
+        # return # backtracking
+    for i in range(len(nums)):
+        dfs(nums[:i]+nums[i+1:], path+[nums[i]], res)
+
+
+"""
+Visualization
+
+dfs(nums = [1, 2, 3] , path = [] , result = [] )
+|____ dfs(nums = [2, 3] , path = [1] , result = [] )
+|      |___dfs(nums = [3] , path = [1, 2] , result = [] )
+|      |    |___dfs(nums = [] , path = [1, 2, 3] , result = [[1, 2, 3]] ) # added a new permutation to the result
+|      |___dfs(nums = [2] , path = [1, 3] , result = [[1, 2, 3]] )
+|           |___dfs(nums = [] , path = [1, 3, 2] , result = [[1, 2, 3], [1, 3, 2]] ) # added a new permutation to the result
+|____ dfs(nums = [1, 3] , path = [2] , result = [[1, 2, 3], [1, 3, 2]] )
+|      |___dfs(nums = [3] , path = [2, 1] , result = [[1, 2, 3], [1, 3, 2]] )
+|      |    |___dfs(nums = [] , path = [2, 1, 3] , result = [[1, 2, 3], [1, 3, 2], [2, 1, 3]] ) # added a new permutation to the result
+|      |___dfs(nums = [1] , path = [2, 3] , result = [[1, 2, 3], [1, 3, 2], [2, 1, 3]] )
+|           |___dfs(nums = [] , path = [2, 3, 1] , result = [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1]] ) # added a new permutation to the result
+|____ dfs(nums = [1, 2] , path = [3] , result = [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1]] )
+       |___dfs(nums = [2] , path = [3, 1] , result = [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1]] )
+       |    |___dfs(nums = [] , path = [3, 1, 2] , result = [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2]] ) # added a new permutation to the result
+       |___dfs(nums = [1] , path = [3, 2] , result = [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2]] )
+            |___dfs(nums = [] , path = [3, 2, 1] , result = [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]] ) # added a new permutation to the result
+"""
+
+
+# Test
 def test(input, expected_output):
+    import copy
     output = permute(input)
     o = copy.deepcopy(output)  # so that we don't mutate input
     e = copy.deepcopy(expected_output)  # so that we don't mutate input
@@ -74,6 +54,7 @@ def test(input, expected_output):
     o.sort()
     e.sort()
     print("Pass" if o == e else "Fail")
+    # print(o)
 
 
 input1 = []
@@ -88,10 +69,14 @@ output3 = [[0, 1], [1, 0]]
 intput4 = [0, 1, 2]
 output4 = [[0, 1, 2], [0, 2, 1], [1, 0, 2], [1, 2, 0], [2, 0, 1], [2, 1, 0]]
 
+intput5 = [1, 2, 3]
+output5 = [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
+
 test(input1, output1)
 test(input2, output2)
 test(input3, output3)
 test(intput4, output4)
+test(intput5, output5)
 
 # input = [1, 2, 3, 4, 5]
 # print(permute(input))
