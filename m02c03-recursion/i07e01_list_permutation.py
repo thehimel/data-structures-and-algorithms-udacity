@@ -1,4 +1,4 @@
-# Recusive DFS Solution by LeetCode user https://leetcode.com/caikehe/
+# Recusive DFS Solution by LeetCode user https://leetcode.com/caikehe/ (More Readable)
 # https://leetcode.com/problems/permutations/discuss/18296/Simple-Python-solution-(DFS)
 
 """

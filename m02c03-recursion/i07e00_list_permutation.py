@@ -1,4 +1,4 @@
-# Recursive Solution by Udacity
+# Recursive Solution by Udacity (Less Readable)
 """
 Args: myList: list of items to be permuted
 Returns: compound list: list of permutation with each permuted item
