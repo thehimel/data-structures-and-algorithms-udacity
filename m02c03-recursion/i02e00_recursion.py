@@ -56,6 +56,7 @@ actually O(k∗n) running time complexity and O(k∗n) space complexity.
 """
 
 
+# https://youtu.be/-tqsxDpp6NI
 # Instead of slicing, we can pass the index for the element that we want
 #   to use for addition.
 def sum_array_index(array, index):
