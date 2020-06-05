@@ -1,8 +1,18 @@
 # Recursive Solution by Udacity (Less Readable)
 """
+Given a list of numbers, find the list of lists made
+with the permutations with the input.
+
 Args: myList: list of items to be permuted
 Returns: compound list: list of permutation with each permuted item
     being represented by a list
+
+:type nums: List[int]
+:rtype: List[List[int]]
+
+Example:
+intput = [1, 2, 3]
+output = [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
 """
 
 # We will use `deepcopy()` function from the `copy` module

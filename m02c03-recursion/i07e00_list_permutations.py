@@ -1,3 +1,5 @@
+# Recusive DFS Solution by LeetCode user leetcode.com/caikehe (More Readable)
+# https://leetcode.com/problems/permutations/discuss/18296/Simple-Python-solution-(DFS)
 """
 Given a list of numbers, find the list of lists made
 with the permutations with the input.
@@ -12,9 +14,6 @@ output = [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
 Easy solution:
 TC: O(n!)
 SC: O(n!)
-
-Recusive DFS Solution by LeetCode user leetcode.com/caikehe (More Readable)
-https://leetcode.com/problems/permutations/discuss/18296/Simple-Python-solution-(DFS)
 """
 
 
