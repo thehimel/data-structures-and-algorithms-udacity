@@ -31,15 +31,32 @@ def dfs(string, path, res):
         dfs(string[:i] + string[i+1:], path+string[i], res)
 
 
-def test(input, expected_output):
-    output = permute(input)
-    print('Pass' if output == expected_output else 'Fail')
+# Test
+def test(test_case):
+    string = test_case[0]
+    solution = test_case[1]
+    output = permute(string)
+
+    output.sort()
+    solution.sort()
+
+    if output == solution:
+        print("Pass")
+    else:
+        print("Fail")
 
 
-input1 = 'ab'
-output1 = ['ab', 'ba']
-test(input1, output1)
+string = 'ab'
+solution = ['ab', 'ba']
+test_case = [string, solution]
+test(test_case)
 
-input2 = 'abc'
-output2 = ['abc', 'acb', 'bac', 'bca', 'cab', 'cba']
-test(input2, output2)
+string = 'abc'
+output = ['abc', 'bac', 'bca', 'acb', 'cab', 'cba']
+test_case = [string, output]
+test(test_case)
+
+string = 'abcd'
+output = ['abcd', 'bacd', 'bcad', 'bcda', 'acbd', 'cabd', 'cbad', 'cbda', 'acdb', 'cadb', 'cdab', 'cdba', 'abdc', 'badc', 'bdac', 'bdca', 'adbc', 'dabc', 'dbac', 'dbca', 'adcb', 'dacb', 'dcab', 'dcba']
+test_case = [string, output]
+test(test_case)
