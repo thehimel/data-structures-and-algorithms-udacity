@@ -54,6 +54,7 @@ def test(input, expected_output):
     o.sort()
     e.sort()
     print("Pass" if o == e else "Fail")
+    # print(o)
 
 
 input1 = []
@@ -68,10 +69,14 @@ output3 = [[0, 1], [1, 0]]
 intput4 = [0, 1, 2]
 output4 = [[0, 1, 2], [0, 2, 1], [1, 0, 2], [1, 2, 0], [2, 0, 1], [2, 1, 0]]
 
+intput5 = [1, 2, 3]
+output5 = [[0, 1, 2], [0, 2, 1], [1, 0, 2], [1, 2, 0], [2, 0, 1], [2, 1, 0]]
+
 test(input1, output1)
 test(input2, output2)
 test(input3, output3)
 test(intput4, output4)
+test(intput5, output5)
 
 # input = [1, 2, 3, 4, 5]
 # print(permute(input))
