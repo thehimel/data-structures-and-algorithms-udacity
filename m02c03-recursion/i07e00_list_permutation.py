@@ -1,4 +1,4 @@
-# Recursive Solution
+# Recursive Solution by Udacity
 """
 Args: myList: list of items to be permuted
 Returns: compound list: list of permutation with each permuted item
@@ -92,3 +92,6 @@ test(input1, output1)
 test(input2, output2)
 test(input3, output3)
 test(intput4, output4)
+
+# input = [1, 2, 3, 4, 5]
+# print(permute(input))
