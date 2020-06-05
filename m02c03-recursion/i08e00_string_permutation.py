@@ -8,6 +8,10 @@ output = ['abc', 'acb', 'bac', 'bca', 'cab', 'cba']
 Easy solution:
 TC: O(n!)
 SC: O(n!)
+
+Inspired by:
+List Permutation Recusive DFS Solution by LeetCode user leetcode.com/caikehe
+https://leetcode.com/problems/permutations/discuss/18296/Simple-Python-solution-(DFS)
 """
 
 
