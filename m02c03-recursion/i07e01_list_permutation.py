@@ -14,6 +14,7 @@ def permute(nums):
 
 
 def dfs(nums, path, res):
+    print(f'\t |--- dfs(nums = {nums}, path = {path}, res = {res})')
     if not nums:
         res.append(path)
         # return # backtracking
