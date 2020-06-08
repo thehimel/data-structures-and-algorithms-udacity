@@ -3,19 +3,20 @@ Exercise 4. Hamming Distance
 In information theory, the Hamming distance between two strings of equal length
 is the number of positions at which the corresponding symbols are different.
 Calculate the Hamming distace for the following test cases.
+
+
+Calculate the hamming distance of the two strings
+Args:
+    str1(string),str2(string): Strings to be used
+        for finding the hamming distance
+Returns:
+    int: Hamming Distance
 """
 
 
 def hamming_distance(str1, str2):
 
-    """
-    Calculate the hamming distance of the two strings
 
-    Args:
-       str1(string),str2(string): Strings to be used for finding the hamming distance
-    Returns:
-       int: Hamming Distance
-    """
 
     if len(str1) == len(str2):
         count = 0
@@ -27,7 +28,6 @@ def hamming_distance(str1, str2):
         return count
 
     return None
-
 
 
 print("Pass" if (10 == hamming_distance('ACTTGACCGGG', 'GATCCGGTACA')) else "Fail")
