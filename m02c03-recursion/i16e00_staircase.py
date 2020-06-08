@@ -37,3 +37,20 @@ def staircase(n):
         return 4
 
     return staircase(n - 1) + staircase(n - 2) + staircase(n - 3)
+
+
+def test(n, solution):
+    print("Pass" if solution == staircase(n) else "Fail")
+
+
+n = 3
+solution = 4
+test(n, solution)
+
+n = 4
+solution = 7
+test(n, solution)
+
+n = 7
+solution = 44
+test(n, solution)
