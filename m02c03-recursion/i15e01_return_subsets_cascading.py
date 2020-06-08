@@ -25,18 +25,18 @@ def subsets(nums):
     return output
 
 
-def test_function(arr, solution):
+def test(arr, solution):
     print("Pass" if solution.sort() == subsets(arr).sort() else "Fail")
 
 
 arr = [9]
 solution = [[], [9]]
-test_function(arr, solution)
+test(arr, solution)
 
 arr = [5, 7]
 solution = [[], [7], [5], [5, 7]]
-test_function(arr, solution)
+test(arr, solution)
 
 arr = [9, 12, 15]
 solution = [[], [15], [12], [12, 15], [9], [9, 15], [9, 12], [9, 12, 15]]
-test_function(arr, solution)
+test(arr, solution)
