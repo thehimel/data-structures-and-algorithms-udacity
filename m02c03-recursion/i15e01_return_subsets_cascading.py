@@ -26,10 +26,7 @@ def subsets(nums):
 
 
 def test_function(arr, solution):
-    if solution.sort() == subsets(arr).sort():
-        print("Pass")
-    else:
-        print("Fail")
+    print("Pass" if solution.sort() == subsets(arr).sort() else "Fail")
 
 
 arr = [9]
