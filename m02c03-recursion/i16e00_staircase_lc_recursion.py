@@ -30,6 +30,7 @@ Space complexity : O(n). The depth of the recursion tree can go upto n.
 """
 
 
+# Recursive Solution
 def staircase(n):
     if n <= 0:
         return 1
