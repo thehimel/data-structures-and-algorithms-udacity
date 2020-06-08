@@ -1,4 +1,4 @@
-# Solution
+# Udacity Solution
 def tower_of_Hanoi_soln(num_disks, source, destination, auxiliary):
 
     if num_disks == 0:
