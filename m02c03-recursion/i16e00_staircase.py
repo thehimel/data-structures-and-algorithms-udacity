@@ -18,6 +18,11 @@ The output is 4 because there are four ways we can climb the staircase:
 2 steps + 1 step
 3 steps
 n == 5 then answer = 13
+
+
+Complexity Analysis of this solution:
+Time complexity : O(2^n). Size of recursion tree will be 2^n.
+Space complexity : O(n). The depth of the recursion tree can go upto n.
 """
 
 
@@ -50,3 +55,6 @@ test(n, solution)
 n = 7
 solution = 44
 test(n, solution)
+
+n = 5
+print(staircase(n))
