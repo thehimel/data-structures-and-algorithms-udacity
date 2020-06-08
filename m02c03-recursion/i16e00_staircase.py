@@ -21,10 +21,6 @@ n == 5 then answer = 13
 """
 
 
-# Solution
-## Read input as specified in the question.
-## Print output as specified in the question.
-
 def staircase(n):
     if n <= 0:
         return 1
