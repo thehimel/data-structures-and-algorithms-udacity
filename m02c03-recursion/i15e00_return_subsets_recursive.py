@@ -42,14 +42,13 @@ def get_subsets(arr, index):
 
     small_output = get_subsets(arr, index + 1)
 
-    output = list()
+    output = []
     # append existing subsets
+    # add current elements to existing subsets and add them to the output
     for element in small_output:
         output.append(element)
 
-    # add current elements to existing subsets and add them to the output
-    for element in small_output:
-        current = list()
+        current = []
         current.append(arr[index])
         current.extend(element)
         output.append(current)
@@ -85,3 +84,6 @@ arr = [9, 12, 15]
 solution = [[], [15], [12], [12, 15], [9], [9, 15], [9, 12], [9, 12, 15]]
 test_case = [arr, solution]
 test_function(test_case)
+
+arr = [1, 2]
+subsets(arr)
