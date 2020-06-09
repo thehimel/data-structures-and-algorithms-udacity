@@ -9,6 +9,10 @@ Right: R
 Pre-order traversal: VLR (V at the beginning)
 In-order traversal: LVR (V in the middle)
 Post-order traversal: LRV (V at last)
+
+Time Complexity: O(n)
+Auxiliary Space: If we don’t consider size of stack for function calls
+then O(1) otherwise O(n).
 """
 
 
