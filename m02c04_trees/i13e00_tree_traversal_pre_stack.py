@@ -1,4 +1,6 @@
 """
+Solution using stack.
+
 Depth first, pre-order traversal
 
 Tree Traversal Logic
