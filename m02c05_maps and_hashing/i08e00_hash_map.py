@@ -1,3 +1,53 @@
+"""
+Time complexities:
+Insert: O(1)
+Search: O(1)
+Delete: O(1)
+
+Note: We need to travers the linked list inside every bucket and
+in worst case, the traversal through the linked list takes O(n) time.
+But the highest size of the linked list for each bucket = n/b.
+Here, bucket size = b and total number of elements in the bucket = n.
+So, the TC for the traversal becomes O(n/b). But still, for b << n,
+it becomes O(n). But the aim of the hashmap is to keep the TC O(1).
+Rather, for the most part, we can safely assume that
+the time complexity of put and get operations will be O(1).
+
+For detailed time complexity, review the jupyter notebook file.
+
+Abbreviation:
+(key: value) pair = KV pair
+
+A KV pair comes.
+From the key, with the help of the hash function, we calculate
+the bucket_index in the bucket_array and put that KV pair on that bucket_index.
+So, TC for get and set becomes O(1) for the simple array set and get operation.
+Elements in the bucket_index are kept as Node of key and value.
+
+Inside the hash funtion, we compress the values with value % bucket_size
+so that the bucket_index doesn't go beyond the bucket_size. Logic: m % n < n
+Example: 5 % 2 = 1, 6 % 2 = 0, 3 % 2 = 1
+Note: While rehashing, bucket_size is increased. Thus, for each element,
+we need to calculate the new bucket_index to put it in the new bucket_array.
+
+Same bucket_index may come for multiple KV pair. For that reason,
+every bucket is a linked list and for multiple elements with same index,
+we add the element to that linked list.
+
+
+Imagine a real world bucket, and you are allowed to fill water upto the 70%
+of the bucket. After 70% is filled, if some new water comes, we'll take a new
+bucket with the more size than the present bucket. Eg. double the size.
+
+Now, come back to the concept.
+Let bucket size = b and total number of elements in the bucket = n.
+Then n/b is called the load factor. We will fill the bucket_array upto 70%.
+That means our load factor is 0.7 and if for any new entry the load factor
+increases, we'll increase the size of the bucket_array and move the elements
+from the present bucket to the new bucket and it is called rehashing.
+"""
+
+
 class LinkedListNode:
     def __init__(self, key, value):
         self.key = key
