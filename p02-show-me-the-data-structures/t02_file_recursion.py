@@ -31,14 +31,27 @@ import os
 
 
 def find_files(suffix, path):
-    return None
+    # create a list of file and sub directories
+    # names in the given directory
+    file_list = os.listdir(path)
+    all_files = list()
+    # Iterate over all the entries
+    for entry in file_list:
+        # Create full path
+        full_path = os.path.join(path, entry)
+        # If entry is a directory then get the list of files in this directory
+        if os.path.isdir(full_path):
+            all_files = all_files + find_files(suffix, full_path)
+        else:
+            if full_path.endswith(suffix):
+                all_files.append(full_path)
+
+    return all_files
 
 
-#  Let us print the files in the directory in which you are running this script
-print(os.listdir("."))
+suffix = '.c'
+path = '.'
 
-#  Let us check if this file is indeed a file!
-print(os.path.isfile("./ex.py"))
-
-#  Does the file end with .py?
-print("./ex.py".endswith(".py"))
+# Get the list of all files in directory tree at given path
+output = find_files(suffix, path)
+print(output)
