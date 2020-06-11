@@ -1,0 +1,16 @@
+Task 1: LRU Cache
+Solution Logic:
+Use python dictionary which works as map data structure
+to keep the (key, value) pair in the cache.
+
+Maintain a variable to keep track of the last key.
+If the max cache size is reached, pop that key from the cache.
+
+Solution Time Complexity:
+Set: O(1)
+Get: O(1)
+Pop: O(1)
+
+Reason: Set, get, and pop operations in python dictionary takes constant time.
+During the removal of the oldest key, we are just performing the pop operation.
+
