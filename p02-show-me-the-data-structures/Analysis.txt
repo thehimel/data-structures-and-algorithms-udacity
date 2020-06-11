@@ -14,3 +14,16 @@ Pop: O(1)
 Reason: Set, get, and pop operations in python dictionary takes constant time.
 During the removal of the oldest key, we are just performing the pop operation.
 
+
+Task 2: File Recursion
+Solution:
+List the files in the present directory.
+If an entry ends with the given suffix, add it to the output list.
+If an entry is directory, call the function recursively
+to get files in that directory.
+
+Complexity Analysis:
+n = total number of files/directories in the given path.
+
+TC: O(n)
+SC: O(n)

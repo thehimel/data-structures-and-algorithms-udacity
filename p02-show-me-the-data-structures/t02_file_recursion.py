@@ -1,4 +1,7 @@
 """
+File Recursion
+
+Problem Statement
 Write code for finding all files under a directory
 and all directories beneath it that end with ".c"
 
@@ -25,6 +28,19 @@ os.path.join(...)
 
 Note: os.walk() is a handy Python method which can achieve this task
 very easily. However, for this problem you are not allowed to use os.walk().
+
+
+Solution:
+List the files in the present directory.
+If an entry ends with the given suffix, add it to the output list.
+If an entry is directory, call the function recursively
+to get files in that directory.
+
+Complexity Analysis:
+n = total number of files/directories in the given path.
+
+TC: O(n)
+SC: O(n)
 """
 
 import os
