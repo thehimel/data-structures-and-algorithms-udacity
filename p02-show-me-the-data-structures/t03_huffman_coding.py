@@ -1,51 +1,92 @@
-from heapq import heappush, heappop, heapify
-from collections import defaultdict
-from bitarray import bitarray
-
-text = "HAPPY HAPPY"
-
-freq_lib = defaultdict(int)    # generate a default library
-for ch in text:                # count each letter and record into the frequency library
-    freq_lib[ch] += 1
-
-print(freq_lib)
-
-heap = [[fq, [sym, ""]] for sym, fq in freq_lib.items()]  # '' is for entering the huffman code later
-print(heap)
-
-heapify(heap) # transform the list into a heap tree structure
-print(heap)
-
-while len(heap) > 1:
-    right = heappop(heap)  # heappop - Pop and return the smallest item from the heap
-    print('right = ', right)
-    left = heappop(heap)
-    print('left = ', left)
-
-    for pair in right[1:]:
-        pair[1] = '0' + pair[1]   # add zero to all the right note
-    for pair in left[1:]:
-        pair[1] = '1' + pair[1]   # add one to all the left note
-    heappush(heap, [right[0] + left[0]] + right[1:] + left[1:])  # add values onto the heap. Eg. h = []; heappush(h, (5, 'write code')) --> h = [(5, 'write code')]
-
-huffman_list = right[1:] + left[1:]
-print(huffman_list)
-huffman_dict = {a[0]: bitarray(str(a[1])) for a in huffman_list}
-print(huffman_dict)
+import sys
 
 
-encoded_text = bitarray()
-encoded_text.encode(huffman_dict, text)
-print(encoded_text)
+# Creating tree nodes
+class NodeTree(object):
+    def __init__(self, left=None, right=None):
+        self.left = left
+        self.right = right
 
-padding = 8 - (len(encoded_text) % 8)
+    def children(self):
+        return (self.left, self.right)
+
+    def __str__(self):
+        return f'{self.left}_{self.right}'
 
 
-decoded_text = bitarray()
+# Main function implementing huffman coding
+def huffman_code_tree(node, binString=''):
+    if type(node) is str:
+        return {node: binString}
+    (left, right) = node.children()
+    d = dict()
+    d.update(huffman_code_tree(left, binString + '0'))
+    d.update(huffman_code_tree(right, binString + '1'))
+    return d
 
-decoded_text = encoded_text  # remove padding
 
-decoded_text = decoded_text.decode(huffman_dict)
-decoded_text = ''.join(decoded_text)
+def huffman_encoding(text):
+    # Calculating frequency
+    freq = {}
+    for char in text:
+        if char in freq:
+            freq[char] += 1
+        else:
+            freq[char] = 1
 
-print(decoded_text)
+    freq = sorted(freq.items(), key=lambda x: x[1], reverse=True)
+
+    nodes = freq
+
+    while len(nodes) > 1:
+        (key1, c1) = nodes[-1]
+        (key2, c2) = nodes[-2]
+        nodes = nodes[:-2]
+        node = NodeTree(key1, key2)
+        nodes.append((node, c1 + c2))
+
+        nodes = sorted(nodes, key=lambda x: x[1], reverse=True)
+
+    huffman_dict = huffman_code_tree(nodes[0][0])
+
+    # print(' Char | Huffman code ')
+    # print('----------------------')
+    # for (char, frequency) in freq:
+    #     print(' %-4r |%12s' % (char, huffman_dict[char]))
+
+    huffman_code = ''
+    for char in text:
+        huffman_code += huffman_dict[char]
+
+    return huffman_code, huffman_dict
+
+
+def huffman_decoding(huffman_code, dictionary):
+    text = ''
+    while len(huffman_code) > 0:
+        for char in dictionary:
+            char_code = dictionary[char]
+            if huffman_code.startswith(char_code):
+                text += char
+                huffman_code = huffman_code[len(char_code):]
+    return text
+
+
+if __name__ == "__main__":
+    codes = {}
+
+    a_great_sentence = "The bird is the word"
+
+    print(f"The size of the data is: {sys.getsizeof(a_great_sentence)}\n")
+    print(f"The content of the data is: {a_great_sentence}\n")
+
+    encoded_data, tree = huffman_encoding(a_great_sentence)
+    print(encoded_data)
+
+    print(f"The size of the encoded data is: {sys.getsizeof(int(encoded_data, base=2))}\n")
+    print(f"The content of the encoded data is: {format(encoded_data)}\n")
+
+    decoded_data = huffman_decoding(encoded_data, tree)
+
+    print(f"The size of the decoded data is: {sys.getsizeof(decoded_data)}\n")
+    print(f"The content of the encoded data is: {decoded_data}\n")
