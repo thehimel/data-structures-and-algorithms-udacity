@@ -65,9 +65,31 @@ def find_files(suffix, path):
     return all_files
 
 
+def test(suffix, path):
+    if len(suffix) == 0:
+        return 'Suffix Empty'
+
+    if len(path) == 0:
+        return 'Path Empty'
+
+    return find_files(suffix, path)
+
+
 suffix = '.c'
 path = '.'
-
-# Get the list of all files in directory tree at given path
-output = find_files(suffix, path)
+output = test(suffix, path)
 print(output)
+print()
+
+suffix = ''
+path = '.'
+output = test(suffix, path)
+print(output)
+print()
+
+
+suffix = '.c'
+path = ''
+output = test(suffix, path)
+print(output)
+print()
