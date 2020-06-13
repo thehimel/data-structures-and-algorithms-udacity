@@ -65,20 +65,27 @@ def huffman_encoding(text):
         else:
             freq[char] = 1
 
-    freq = sorted(freq.items(), key=lambda x: x[1], reverse=True)
+    # If the text consists of only one type of letter, e.g. 'AAAAAA',
+    # combining 2 nodes is not possible as there is only one node.
+    # Thus, just create the huffman_dict manually, and it's very efficient.
+    if len(freq) == 1:
+        huffman_dict = {text[0]: '0'}
 
-    nodes = freq
+    else:
+        freq = sorted(freq.items(), key=lambda x: x[1], reverse=True)
 
-    while len(nodes) > 1:
-        (key1, c1) = nodes[-1]
-        (key2, c2) = nodes[-2]
-        nodes = nodes[:-2]
-        node = NodeTree(key1, key2)
-        nodes.append((node, c1 + c2))
+        nodes = freq
 
-        nodes = sorted(nodes, key=lambda x: x[1], reverse=True)
+        while len(nodes) > 1:
+            (key1, c1) = nodes[-1]
+            (key2, c2) = nodes[-2]
+            nodes = nodes[:-2]
+            node = NodeTree(key1, key2)
+            nodes.append((node, c1 + c2))
 
-    huffman_dict = huffman_code_tree(nodes[0][0])
+            nodes = sorted(nodes, key=lambda x: x[1], reverse=True)
+
+        huffman_dict = huffman_code_tree(nodes[0][0])
 
     # print(' Char | Huffman code ')
     # print('----------------------')
@@ -105,7 +112,7 @@ def huffman_decoding(huffman_code, dictionary):
 
 def test(data):
     if len(data) == 0:
-        print("data is empty. No need to encode or decode.")
+        print("Data is empty. No need to encode or decode.")
         return
 
     print(f"Data: {data}")
@@ -133,7 +140,7 @@ if __name__ == "__main__":
     text = "Python is beautiful."
     test(text)
 
-    text = "AAAAAA "
+    text = "AAAAAA"
     test(text)
 
     text = ""
