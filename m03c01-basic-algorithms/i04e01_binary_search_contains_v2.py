@@ -28,6 +28,7 @@ def search(array, target, start, end):
         return search(array, target, start, end)
 
 
+# By modifying the binary search function
 def contains(array, target):
     start = 0
     end = len(array) - 1
