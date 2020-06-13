@@ -197,3 +197,10 @@ for i in element8:
     linked_list_8.append(i)
 
 test(linked_list_7, linked_list_8)
+
+
+# Test case 5
+linked_list_9 = LinkedList()
+linked_list_10 = LinkedList()
+
+test(linked_list_9, linked_list_10)
