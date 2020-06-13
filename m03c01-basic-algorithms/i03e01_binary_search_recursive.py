@@ -26,14 +26,14 @@ def search(array, target, start, end):
         return search(array, target, start, end)
 
 
-def binary_search(array, target):
+def recursive_binary_search(array, target):
     start = 0
     end = len(array) - 1
     return search(array, target, start, end)
 
 
 def test_function(test_case):
-    answer = binary_search(test_case[0], test_case[1])
+    answer = recursive_binary_search(test_case[0], test_case[1])
     if answer == test_case[2]:
         print("Pass!")
     else:
