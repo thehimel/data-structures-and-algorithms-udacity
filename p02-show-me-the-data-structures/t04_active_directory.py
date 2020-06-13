@@ -68,3 +68,4 @@ print(is_user_in_group(sub_child_user, sub_child))  # True
 print(is_user_in_group(sub_child_user, child))  # True
 print(is_user_in_group(sub_child_user, parent))  # True
 print(is_user_in_group("unknown user", sub_child))  # False
+print(is_user_in_group("", sub_child))  # False
