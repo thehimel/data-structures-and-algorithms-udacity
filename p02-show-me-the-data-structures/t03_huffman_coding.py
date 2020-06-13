@@ -133,7 +133,7 @@ if __name__ == "__main__":
     text = "Python is beautiful."
     test(text)
 
-    text = "Sky is blue."
+    text = "AAAAAA "
     test(text)
 
     text = ""
