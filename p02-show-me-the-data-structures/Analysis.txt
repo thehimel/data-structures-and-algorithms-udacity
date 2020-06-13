@@ -58,7 +58,6 @@ The space complexity is depended on the input size and it is lenear. Thus, O(n)
 TC: O(n^2)
 SC: O(n)
 
-
 Task 4: Active Directory
 ------------------------
 Time Complexity:
