@@ -1,7 +1,7 @@
 Task 1: LRU Cache
 -----------------
 Solution Logic:
-Use python dictionary which works as map data structure
+Use python ordered dictionary which works as map data structure
 to keep the (key, value) pair in the cache.
 
 Maintain a variable to keep track of the last key.

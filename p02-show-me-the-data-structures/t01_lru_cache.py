@@ -22,7 +22,7 @@ All operations must take O(1) time.
 For the current problem, you can consider the size of cache = 5.
 
 Solution Logic:
-Use python dictionary which works as map data structure
+Use python ordered dictionary which works as map data structure
 to keep the (key, value) pair in the cache.
 
 Maintain a variable to keep track of the last key.
@@ -52,6 +52,7 @@ class LRU_Cache(object):
     # Retrieve item from provided key. Return -1 if nonexistent.
     def get(self, key):
         if key in self.cache:
+            # Update the LRU Key
             self.lru_key = self.cache[key]
             return self.cache[key]
         return -1
