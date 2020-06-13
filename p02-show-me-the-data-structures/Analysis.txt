@@ -36,8 +36,8 @@ Task 3: Huffman Coding
 Operation 1: Encoding
 .....................
 Time Complexity:
-The binary tree creation takes O(log(n)) and the operation must be performed n times.
-Thus the time complexity is O(nlog(n))
+The binary tree creation takes O(log(n)) and the operation must be performed
+n times. Thus the time complexity is O(nlog(n))
 
 Space Complexity:
 The space complexity is depended on the input size and it is lenear. Thus, O(n)
@@ -49,9 +49,9 @@ Operation 2: Decoding
 .....................
 Time Complexity:
 The while loop is just to terminate the loop, and it's O(1)
-For every character it's matching with the begining of the input which takes O(n)
-and also slicing the input and that also takes O(n) for each operation. Thus,
-overall O(n^2)
+For every character it's matching with the begining of the input which takes
+O(n) and also slicing the input and that also takes O(n) for each operation.
+Thus, overall O(n^2)
 
 Space Complexity:
 The space complexity is depended on the input size and it is lenear. Thus, O(n)
