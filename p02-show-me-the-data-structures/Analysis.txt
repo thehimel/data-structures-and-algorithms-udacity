@@ -69,3 +69,17 @@ n = number of users in the group
 TC: O(n)
 SC: O(1)
 
+Task 5: Blockchain
+------------------
+n = number of total block nodes in the block chain.
+
+Time Complexity:
+Append: O(1).
+We are keeping track of the tail node, thus it takes constant time.
+
+Traverse: O(n).
+We traverse trough the each node of the blockchain.
+
+Space Complexity:
+Append: O(1)
+Traverse: O(n)
