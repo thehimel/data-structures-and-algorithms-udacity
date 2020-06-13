@@ -26,23 +26,6 @@ class LinkedList:
         self.tail = new_node
         self.size += 1
 
-    def remove(self, value):
-        if self.head is None:
-            return
-
-        if self.head.value == value:
-            self.head = self.head.next
-
-        previous = self.head
-        current = previous.next
-
-        while(current):
-            if current.value == value:
-                previous.next = current.next
-                return
-            previous = current
-            current = current.next
-
     def get_size(self):
         return self.size
 
@@ -56,20 +39,34 @@ class LinkedList:
         return out_string
 
 
+def copy_linked_list(llist, new_llist):
+    node = new_llist.head
+    while(node):
+        llist.append(node.value)
+        node = node.next
+
+
 def union(llist_1, llist_2):
+    llist = LinkedList()
+
     if llist_1.get_size() == 0:
-        return llist_2
+        copy_linked_list(llist, llist_2)
+        return llist
+    else:
+        copy_linked_list(llist, llist_1)
 
     if llist_2.get_size() == 0:
-        return llist_1
-
-    llist = llist_1
-    llist.tail.next = llist_2.head
+        return llist
+    else:
+        copy_linked_list(llist, llist_2)
 
     return llist
 
 
 def is_present(llist, search_node):
+    if llist.get_size() == 0:
+        return False
+
     node = llist.head
     while node:
         if node.value == search_node.value:
@@ -108,9 +105,9 @@ for i in element_2:
 
 print(linked_list_1)
 print(linked_list_2)
-
-print(union(linked_list_1, linked_list_2))
-print(intersection(linked_list_1, linked_list_2))
+print(f'Union: {union(linked_list_1, linked_list_2)}')
+print(f'Intersection: {intersection(linked_list_1, linked_list_2)}')
+print()
 
 # Test case 2
 linked_list_3 = LinkedList()
@@ -125,5 +122,8 @@ for i in element_1:
 for i in element_2:
     linked_list_4.append(i)
 
-print(union(linked_list_3, linked_list_4))
-print(intersection(linked_list_3, linked_list_4))
+print(linked_list_3)
+print(linked_list_4)
+print(f'Union: {union(linked_list_3, linked_list_4)}')
+print(f'Intersection: {intersection(linked_list_3, linked_list_4)}')
+print()
