@@ -11,13 +11,13 @@ print(contains('b', letters))  # False
 
 def search(array, target, start, end):
     if start > end:
-        return -1
+        return False
 
     mid = (start + end)//2
     mid_element = array[mid]
 
     if mid_element == target:
-        return mid
+        return True
 
     elif target < mid_element:
         end = mid - 1
@@ -28,19 +28,10 @@ def search(array, target, start, end):
         return search(array, target, start, end)
 
 
-def recursive_binary_search(array, target):
+def contains(array, target):
     start = 0
     end = len(array) - 1
     return search(array, target, start, end)
-
-
-# Without modifying the binary search function
-def contains(array, target):
-    index = recursive_binary_search(array, target)
-    if index == -1:
-        return False
-    else:
-        return True
 
 
 letters = ['a', 'c', 'd', 'f', 'g']
