@@ -122,3 +122,11 @@ print(f'LRU Key: {our_cache.get_lru_key()}')
 print(our_cache.get(6))
 print(our_cache)
 print(f'LRU Key: {our_cache.get_lru_key()}')
+
+our_cache.set(0, 0)
+print(our_cache)
+print(f'LRU Key: {our_cache.get_lru_key()}')
+
+our_cache.set(-1, -1)
+print(our_cache)
+print(f'LRU Key: {our_cache.get_lru_key()}')
