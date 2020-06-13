@@ -72,21 +72,31 @@ def huffman_decoding(huffman_code, dictionary):
     return text
 
 
-if __name__ == "__main__":
-    codes = {}
+def test(text):
+    if len(text) == 0:
+        print("Text is empty. No need to encode or decode.")
+        return
 
-    a_great_sentence = "The bird is the word"
+    print(f"Data: {text}")
+    print(f"Data Size: {sys.getsizeof(text)}")
 
-    print(f"The size of the data is: {sys.getsizeof(a_great_sentence)}\n")
-    print(f"The content of the data is: {a_great_sentence}\n")
+    encoded_data, tree = huffman_encoding(text)
 
-    encoded_data, tree = huffman_encoding(a_great_sentence)
-    print(encoded_data)
-
-    print(f"The size of the encoded data is: {sys.getsizeof(int(encoded_data, base=2))}\n")
-    print(f"The content of the encoded data is: {format(encoded_data)}\n")
+    print(f"Encoded Data: {encoded_data}")
+    print(f"Encoded Data Size: {sys.getsizeof(int(encoded_data, base=2))}")
 
     decoded_data = huffman_decoding(encoded_data, tree)
 
-    print(f"The size of the decoded data is: {sys.getsizeof(decoded_data)}\n")
-    print(f"The content of the encoded data is: {decoded_data}\n")
+    print(f"Decoded Data: {decoded_data}")
+    print(f"Decoded Data Size: {sys.getsizeof(decoded_data)}\n")
+
+
+if __name__ == "__main__":
+    text = "The bird is the word."
+    test(text)
+
+    text = "Python is beautiful."
+    test(text)
+
+    text = ""
+    test(text)
