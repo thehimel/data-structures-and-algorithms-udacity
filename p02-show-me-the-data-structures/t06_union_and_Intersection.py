@@ -1,3 +1,33 @@
+"""
+Complexity Alalysis:
+Operation 1: Union
+..................
+Union = linked_list_1 + linked_list_2
+M = size of the first linked list
+N = size of the second linked list
+
+TC: O(M+N)
+SC: O(M+N)
+
+This can also be written as:
+TC: O(n)
+SC: O(n)
+
+Operation 2: Intersection
+.........................
+Intersection = Common nodes between linked_list_1 and linked_list_2
+For every node in linked_list_2, we check if the value is presented in
+the linked_list_1 or not.
+
+TC: O(M*N)
+SC: O(n)
+
+This can also be written as:
+TC: O(n^2)
+SC: O(n)
+"""
+
+
 class Node:
     def __init__(self, value):
         self.value = value
@@ -44,6 +74,15 @@ def copy_linked_list(llist, new_llist):
     while(node):
         llist.append(node.value)
         node = node.next
+
+
+"""
+Union = linked_list_1 + linked_list_2
+If we just append the linked_list_2 at the tail of linked_list_2,
+the linked_list_1 will be modified. But we don't want that.
+
+Thus, we create a new linked list and copy other linked lists accordingly.
+"""
 
 
 def union(llist_1, llist_2):

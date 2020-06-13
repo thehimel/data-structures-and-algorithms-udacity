@@ -30,6 +30,7 @@ n = total number of files/directories in the given path.
 TC: O(n)
 SC: O(n)
 
+
 Task 3: Huffman Coding
 ----------------------
 Operation 1: Encoding
@@ -58,6 +59,7 @@ The space complexity is depended on the input size and it is lenear. Thus, O(n)
 TC: O(n^2)
 SC: O(n)
 
+
 Task 4: Active Directory
 ------------------------
 Time Complexity:
@@ -68,6 +70,7 @@ n = number of users in the group
 
 TC: O(n)
 SC: O(1)
+
 
 Task 5: Blockchain
 ------------------
@@ -83,3 +86,32 @@ We traverse trough the each node of the blockchain.
 Space Complexity:
 Append: O(1)
 Traverse: O(n)
+
+
+Task 6: Union and Intersection
+------------------------------
+Operation 1: Union
+..................
+Union = linked_list_1 + linked_list_2
+M = size of the first linked list
+N = size of the second linked list
+
+TC: O(M+N)
+SC: O(M+N)
+
+This can also be written as:
+TC: O(n)
+SC: O(n)
+
+Operation 2: Intersection
+.........................
+Intersection = Common nodes between linked_list_1 and linked_list_2
+For every node in linked_list_2, we check if the value is presented in
+the linked_list_1 or not.
+
+TC: O(M*N)
+SC: O(n)
+
+This can also be written as:
+TC: O(n^2)
+SC: O(n)
