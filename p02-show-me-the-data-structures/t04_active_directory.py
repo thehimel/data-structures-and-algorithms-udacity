@@ -5,6 +5,7 @@ Args:
     user(str): user name/id
     group(class:Group): group to check user membership against
 
+n = Total number of groups + Total number of users in all groups
 TC: O(n)
 SC: O(1)
 """
@@ -36,16 +37,24 @@ parent = Group("parent")
 child = Group("child")
 sub_child = Group("subchild")
 
+parent.add_group(child)
+child.add_group(sub_child)
+
 sub_child_user = "sub_child_user"
 sub_child.add_user(sub_child_user)
 
-child.add_group(sub_child)
-parent.add_group(child)
-
 
 def is_user_in_group(user, group):
-    return user in group.get_users()
+    if user in group.get_users():
+        return True
+
+    for group in group.get_groups():
+        return is_user_in_group(user, group)
+
+    return False
 
 
-print(is_user_in_group(sub_child_user, sub_child))
-print(is_user_in_group("unknown user", sub_child))
+print(is_user_in_group(sub_child_user, sub_child))  # True
+print(is_user_in_group(sub_child_user, child))  # True
+print(is_user_in_group(sub_child_user, parent))  # True
+print(is_user_in_group("unknown user", sub_child))  # False

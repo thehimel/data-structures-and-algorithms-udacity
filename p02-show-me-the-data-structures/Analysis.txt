@@ -66,8 +66,7 @@ Time Complexity:
 We just need to lookup at the users of the group by traversing throug the array
 of users if that group. Thus TC is O(n)
 
-n = number of users in the group
-
+n = Total number of groups + Total number of users in all groups
 TC: O(n)
 SC: O(1)
 
