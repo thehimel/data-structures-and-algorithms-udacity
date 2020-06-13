@@ -104,7 +104,7 @@ class BlockChain:
             previous_hash = block_node.block.previous_hash
 
             print(f'Block: {count}, Data: {data}, Time: {time}, \
-                \nHash: {hash}, \nPrevious Hash: {previous_hash}\n')
+                \nSHA256 Hash: {hash}, \nPrevious Hash: {previous_hash}\n')
 
             count += 1
             block_node = block_node.next
