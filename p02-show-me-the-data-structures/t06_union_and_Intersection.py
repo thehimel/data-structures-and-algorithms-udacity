@@ -129,6 +129,14 @@ def intersection(llist_1, llist_2):
     return llist
 
 
+def test(linked_list_1, linked_list_2):
+    print(linked_list_1)
+    print(linked_list_2)
+    print(f'Union: {union(linked_list_1, linked_list_2)}')
+    print(f'Intersection: {intersection(linked_list_1, linked_list_2)}')
+    print()
+
+
 # Test case 1
 linked_list_1 = LinkedList()
 linked_list_2 = LinkedList()
@@ -142,11 +150,7 @@ for i in element_1:
 for i in element_2:
     linked_list_2.append(i)
 
-print(linked_list_1)
-print(linked_list_2)
-print(f'Union: {union(linked_list_1, linked_list_2)}')
-print(f'Intersection: {intersection(linked_list_1, linked_list_2)}')
-print()
+test(linked_list_1, linked_list_2)
 
 # Test case 2
 linked_list_3 = LinkedList()
@@ -161,8 +165,15 @@ for i in element_1:
 for i in element_2:
     linked_list_4.append(i)
 
-print(linked_list_3)
-print(linked_list_4)
-print(f'Union: {union(linked_list_3, linked_list_4)}')
-print(f'Intersection: {intersection(linked_list_3, linked_list_4)}')
-print()
+test(linked_list_3, linked_list_4)
+
+
+# Test case 3
+linked_list_5 = LinkedList()
+linked_list_6 = LinkedList()
+element = [1, 2, 3, 4, 5, 6, 7]
+
+for i in element:
+    linked_list_6.append(i)
+
+test(linked_list_5, linked_list_6)
