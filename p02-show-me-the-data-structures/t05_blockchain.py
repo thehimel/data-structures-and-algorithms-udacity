@@ -83,7 +83,6 @@ class BlockChain:
 
         self.tail.next = new_block_node
         self.tail = new_block_node
-        return
 
     def _get_previous_hash(self):
         if self.tail is None:
