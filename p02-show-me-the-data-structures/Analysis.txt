@@ -1,4 +1,5 @@
 Task 1: LRU Cache
+-----------------
 Solution Logic:
 Use python dictionary which works as map data structure
 to keep the (key, value) pair in the cache.
@@ -16,6 +17,7 @@ During the removal of the oldest key, we are just performing the pop operation.
 
 
 Task 2: File Recursion
+----------------------
 Solution:
 List the files in the present directory.
 If an entry ends with the given suffix, add it to the output list.
@@ -29,8 +31,9 @@ TC: O(n)
 SC: O(n)
 
 Task 3: Huffman Coding
-
+----------------------
 Operation 1: Encoding
+.....................
 Time Complexity:
 The binary tree creation takes O(log(n)) and the operation must be performed n times.
 Thus the time complexity is O(nlog(n))
@@ -42,6 +45,7 @@ TC: O(nlog(n))
 SC: O(n)
 
 Operation 2: Decoding
+.....................
 Time Complexity:
 The while loop is just to terminate the loop, and it's O(1)
 For every character it's matching with the begining of the input which takes O(n)
@@ -53,4 +57,16 @@ The space complexity is depended on the input size and it is lenear. Thus, O(n)
 
 TC: O(n^2)
 SC: O(n)
+
+
+Task 4: Active Directory
+------------------------
+Time Complexity:
+We just need to lookup at the users of the group by traversing throug the array
+of users if that group. Thus TC is O(n)
+
+n = number of users in the group
+
+TC: O(n)
+SC: O(1)
 
