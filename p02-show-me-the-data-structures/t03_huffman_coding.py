@@ -72,30 +72,37 @@ def huffman_decoding(huffman_code, dictionary):
     return text
 
 
-def test(text):
-    if len(text) == 0:
-        print("Text is empty. No need to encode or decode.")
+def test(data):
+    if len(data) == 0:
+        print("data is empty. No need to encode or decode.")
         return
 
-    print(f"Data: {text}")
-    print(f"Data Size: {sys.getsizeof(text)}")
+    print(f"Data: {data}")
+    data_size = sys.getsizeof(data)
+    print(f"Data Size: {data_size}")
 
-    encoded_data, tree = huffman_encoding(text)
+    encoded_data, tree = huffman_encoding(data)
+    encoded_data_size = sys.getsizeof(int(encoded_data, base=2))
 
     print(f"Encoded Data: {encoded_data}")
-    print(f"Encoded Data Size: {sys.getsizeof(int(encoded_data, base=2))}")
+    print(f"Encoded Data Size: {encoded_data_size}")
+    print(f'Size Reduced: {data_size - encoded_data_size}')
 
     decoded_data = huffman_decoding(encoded_data, tree)
+    decoded_data_size = sys.getsizeof(decoded_data)
 
     print(f"Decoded Data: {decoded_data}")
-    print(f"Decoded Data Size: {sys.getsizeof(decoded_data)}\n")
+    print(f"Decoded Data Size: {decoded_data_size}\n")
 
 
 if __name__ == "__main__":
-    text = "The bird is the word."
-    test(text)
+    data = "The bird is the word."
+    test(data)
 
     text = "Python is beautiful."
+    test(text)
+
+    text = "Sky is blue."
     test(text)
 
     text = ""
