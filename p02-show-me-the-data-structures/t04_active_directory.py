@@ -1,4 +1,14 @@
 """
+Complexity Analysis:
+-------------------
+Time Complexity:
+We need to search through all sub groups and users of all groups.
+
+n = Total number of groups + Total number of users in all groups
+TC: O(n)
+SC: O(1)
+
+
 Return True if user is in the group, False otherwise.
 
 Args:

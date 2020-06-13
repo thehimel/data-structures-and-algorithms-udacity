@@ -63,8 +63,7 @@ SC: O(n)
 Task 4: Active Directory
 ------------------------
 Time Complexity:
-We just need to lookup at the users of the group by traversing throug the array
-of users if that group. Thus TC is O(n)
+We need to search through all sub groups and users of all groups.
 
 n = Total number of groups + Total number of users in all groups
 TC: O(n)
