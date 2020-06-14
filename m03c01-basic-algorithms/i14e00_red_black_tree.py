@@ -41,7 +41,7 @@ class RedBlackTree(object):
         self.rebalance(new_node)
 
     def insert_helper(self, current, new_val):
-        if current.value < new_val:
+        if new_val > current.value:
             if current.right:
                 return self.insert_helper(current.right, new_val)
             else:
