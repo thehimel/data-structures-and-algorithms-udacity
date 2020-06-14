@@ -118,18 +118,19 @@ heap = Heap(heap_size)
 elements = [1, 2, 3, 4, 1, 2]
 for element in elements:
     heap.insert(element)
-print('Inserted elements: {}'.format(elements))
 
-print('size of heap: {}'.format(heap.size()))
+print(f'Inserted elements: {elements}')
+
+print(f'size of heap: {heap.size()}')
 
 for _ in range(4):
-    print('Call remove: {}'.format(heap.remove()))
+    print(f'Call remove: {heap.remove()}')
 
-print('Call get_minimum: {}'.format(heap.get_minimum()))
+print(f'Call get_minimum: {heap.get_minimum()}')
 
 for _ in range(2):
-    print('Call remove: {}'.format(heap.remove()))
+    print(f'Call remove: {heap.remove()}')
 
-print('size of heap: {}'.format(heap.size()))
-print('Call remove: {}'.format(heap.remove()))
-print('Call is_empty: {}'.format(heap.is_empty()))
+print(f'size of heap: {heap.size()}')
+print(f'Call remove: {heap.remove()}')
+print(f'Call is_empty: {heap.is_empty()}')
