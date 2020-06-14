@@ -49,7 +49,7 @@ class Heap:
         # print("inside heapify")
         child_index = self.next_index
 
-        while child_index >= 1:
+        while child_index > 0:
             parent_index = (child_index - 1) // 2
             parent_element = self.cbt[parent_index]
             child_element = self.cbt[child_index]
