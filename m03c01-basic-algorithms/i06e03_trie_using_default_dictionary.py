@@ -24,7 +24,8 @@ class Trie(object):
 
         for char in word:
             node = node.children[char]
-            node.is_word = True
+
+        node.is_word = True
 
     # Check if word exists in trie
     def exists(self, word):
@@ -64,8 +65,10 @@ for valid_word in valid_words:
 # Tests
 assert word_trie.exists('the')
 assert word_trie.exists('any')
+assert not word_trie.exists('t')
 assert not word_trie.exists('these')
 assert not word_trie.exists('zzz')
+
 print('All tests passed!')
 
 print(word_trie.get_items())
