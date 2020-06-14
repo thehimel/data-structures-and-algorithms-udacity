@@ -97,13 +97,13 @@ class Heap:
 
             if min_element == left_child:
                 self.cbt[left_child_index] = parent
-                self.cbt[parent_index] = min_element
-                parent = left_child_index
+                self.cbt[parent_index] = left_child
+                parent_index = left_child_index
 
             elif min_element == right_child:
                 self.cbt[right_child_index] = parent
-                self.cbt[parent_index] = min_element
-                parent = right_child_index
+                self.cbt[parent_index] = right_child
+                parent_index = right_child_index
 
     def get_minimum(self):
         # Returns the minimum element present in the heap
