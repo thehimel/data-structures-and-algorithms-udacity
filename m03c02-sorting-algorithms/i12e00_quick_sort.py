@@ -1,9 +1,9 @@
-def sort_a_little_bit(arr, start, end):
+def partition(arr, start, end):
     left_index = start
     pivot_pos = end
     pivot_value = arr[pivot_pos]
 
-    while (pivot_pos != left_index):
+    while (left_index != pivot_pos):
 
         item = arr[left_index]
 
@@ -19,17 +19,17 @@ def sort_a_little_bit(arr, start, end):
     return pivot_pos
 
 
-def sort_all(arr, start, end):
+def quick(arr, start, end):
     if end <= start:
         return
 
-    pivot_pos = sort_a_little_bit(arr, start, end)
-    sort_all(arr, start, pivot_pos - 1)
-    sort_all(arr, pivot_pos + 1, end)
+    pivot_pos = partition(arr, start, end)
+    quick(arr, start, pivot_pos - 1)
+    quick(arr, pivot_pos + 1, end)
 
 
 def quicksort(arr):
-    sort_all(arr, 0, len(arr) - 1)
+    quick(arr, 0, len(arr) - 1)
 
 
 def test(arr):
