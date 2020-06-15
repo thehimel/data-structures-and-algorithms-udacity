@@ -29,11 +29,16 @@ from the sorted list to the output list.
 At last create a string from the list with the "".join(output)
 
 Complexity Analysis:
-Timsort is used in the python sorted() method. TC of Timsort() = O(nlog(n))
-TC of Python sorted()
+TC: O(n) + TC of sorted() => O(n) + O(nlogn) => O(nlogn)
+SC: O(n) + SC of sorted() => O(n) + O(n) => O(n)
 
-TC: O(n) + TC of sorted()
-SC: O(n) + SC of sorted()
+Thus,
+TC: O(nlogn)
+SC: O(n)
+
+Note: Timsort is used in the python sorted() method.
+TC of Timsort() = O(nlogn)
+SC of Timesort() is O(n)
 """
 
 
