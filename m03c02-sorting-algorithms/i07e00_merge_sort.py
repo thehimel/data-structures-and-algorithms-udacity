@@ -40,7 +40,21 @@ def merge(arr, start, mid, end):
         k += 1
 
 
-if __name__ == '__main__':
-    arr = [20, 35, -15, 7, 55, 1, -22]
+def mergesort(arr):
     split(arr, 0, len(arr) - 1)
     print(arr)
+
+
+arr1 = [20, 35, -15, 7, 55, 1, -22]
+arr2 = [8, 3, 1, 7, 0, 10, 2]
+arr3 = [1, 0]
+arr4 = [97, 98, 99]
+arr5 = [0]
+arr6 = []
+
+mergesort(arr1)
+mergesort(arr2)
+mergesort(arr3)
+mergesort(arr4)
+mergesort(arr5)
+mergesort(arr6)
