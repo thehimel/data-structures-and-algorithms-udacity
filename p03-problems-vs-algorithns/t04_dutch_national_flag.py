@@ -11,6 +11,7 @@ but it will not count as single traversal.
 
 
 Solution:
+---------
 Put 0s and 2s in their correct positions,
 then 1s are automatically placed in their right positions.
 

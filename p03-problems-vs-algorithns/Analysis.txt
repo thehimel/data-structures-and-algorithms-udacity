@@ -1,0 +1,80 @@
+Task 1: Square Root of an Integer
+---------------------------------
+Base case:
+mid_square = mid * mid
+mid_next_square = (mid+1) * (mid+1)
+if mid_square <= number and mid_next_square > number:
+    return mid
+
+If number < mid_square, search left, else search right.
+
+Complexity Analysis:
+At every step, we're dividing our search portion with binary search.
+And we know, binary search has TC of O(log(n)).
+Taking no extra space. Thus, in-place algorithm.
+
+TC: O(log(n))
+SC: O(1)
+
+
+Task 2: Search in a Rotated Sorted Array
+---------
+Base condition is if mid_item == target, return mid.
+
+Else if left_item is less than or equal to mid_item, that means left part
+is uniformly increasing. Else, the right part is uniformly increasing.
+
+If left part is uniformly increasing, and left_item <= target <= mid_item,
+right = mid - 1 else left = mid + 1.
+
+If right part is uniformly increasing, and mid_item <= target <= right_item,
+left = mid + 1, else right = mid - 1.
+
+Complexity Analysis:
+Using the same logic of Binary search and diving the search portion in 2 halves
+at every pass. Taking no extra space. Thus, in-place algorithm.
+
+TC: O(log(n))
+SC: O(1)
+
+
+Task 3: Rearrange Array Digits
+------------------------------
+We know that, largest number can be found from digits (0-9) when they are
+placed from larger to smaller form. That means formed in descending order.
+
+Sort the array with merge sort from larger to smaller. Construct 2 numbers.
+First with the odd indices of the sorted array. Second with the even indices
+of the sorted array. Return these 2 numbers in a list.
+
+Example:
+Input: [1, 2, 3, 4, 5]
+Sorted array from max to min numbers: [5, 4, 3, 2, 1]
+x = 531
+y = 42
+Output: [531, 42]
+
+Complexity Analysis:
+TC: T(merge_sort) + O(n) => O(nlog(n)) + O(n) => O(nlog(n))
+SC: T(merge_sort) + O(n) => O(n) + O(n) => O(n)
+
+TC: O(nlog(n))
+SC: O(n)
+
+Task 4: Dutch National Flag Problem
+-----------------------------------
+Put 0s and 2s in their correct positions,
+then 1s are automatically placed in their right positions.
+
+Initialize next_pos_0 to the first index and next_pos_2
+to the last index. We'll keep the 0's at the beginning and 2's at the ending.
+Thus. 1's will stay in the middle.
+
+We search of 0 and 2. If we find a 0, we bring it to it's next_pos_0.
+If we find a 2, we throw it to it's next_pos_2. For both operations, we swap
+the values in thoses indexes.
+
+Complexity Analysis:
+TC: O(n)
+SC: O(1)
+In-place algorithm.
