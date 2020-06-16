@@ -7,7 +7,7 @@ Input: [0, 0, 2, 2, 2, 1, 1, 1, 2, 0, 2]
 Output: [0, 0, 0, 1, 1, 1, 2, 2, 2, 2, 2]
 
 Note: If we can get the function to put the 0s and 2s in the correct positions,
-this will aotumatically cause the 1s to be in the correct positions as well.
+this will aotomatically cause the 1s to be in the correct positions as well.
 
 The idea is to put 0 and 2 in their correct positions, which will make sure
 all the 1s are automatically placed in their right positions
