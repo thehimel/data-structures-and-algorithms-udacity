@@ -11,8 +11,8 @@ but it will not count as single traversal.
 
 
 Solution:
-Put 0s and 2s in their correct positions, then 1s are automatically placed
-in their right positions
+Put 0s and 2s in their correct positions,
+then 1s are automatically placed in their right positions.
 
 Initialize next_pos_0 to the first index and next_pos_2
 to the last index. We'll keep the 0's at the beginning and 2's at the ending.

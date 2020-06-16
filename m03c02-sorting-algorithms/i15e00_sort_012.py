@@ -11,7 +11,7 @@ this will aotomatically cause the 1s to be in the correct positions as well.
 
 Solution:
 The idea is to put 0s and 2s in their correct positions,
-then 1s are automatically placed in their right positions
+then 1s are automatically placed in their right positions.
 
 Initialize next_pos_0 to the first index and next_pos_2
 to the last index. We'll keep the 0's at the beginning and 2's at the ending.
