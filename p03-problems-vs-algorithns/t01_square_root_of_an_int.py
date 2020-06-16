@@ -27,6 +27,7 @@ If number < mid_square, search left, else search right.
 Complexity Analysis:
 At every step, we're dividing our search portion with binary search.
 And we know, binary search has TC of O(log(n)).
+Taking no extra space. Thus, in-place algorithm.
 
 TC: O(log(n))
 SC: O(1)
