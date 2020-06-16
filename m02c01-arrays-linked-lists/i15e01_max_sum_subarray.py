@@ -10,11 +10,8 @@ The largest sum is 8, which is the sum of all elements of the array.
 Example 2:
 arr = [1, 2, -5, -4, 1, 6]
 The largest sum is 7, which is the sum of the last two elements of the array.
-"""
 
-# Solution
-'''
-The Idea:
+Logic:
 1. We have to find the sum of "contiguous" subarray,
     therefore we must not change the order of array elements.
 2. Let `current_sum` denotes the sum of a subarray, and `max_sum` denotes
@@ -27,7 +24,11 @@ The Idea:
     - Update (overwrite) `max_sum`,
         if it is lower than the updated `current_sum`
 4. Return `max_sum`
-'''
+
+Complexity Analysis:
+TC: O(n)
+SC: O(n)
+"""
 
 
 def max_sum_subarray(arr):

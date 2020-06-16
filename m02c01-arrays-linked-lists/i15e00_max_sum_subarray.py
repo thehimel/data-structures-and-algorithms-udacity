@@ -12,6 +12,21 @@ Example 2:
 arr = [1, 2, -5, -4, 1, 6]
 The largest sum is 7, which is the sum of the last two elements of the array.
 output = [1, 6]
+
+Logic:
+If current_sum + element is greater than the element, add it to the
+current_sum_sub_arr. Else element is greater than the current_sum, create new
+current_sum_sub_arr with only the element.
+
+If current_sum is greater than the max_sum,
+max_sum_sub_arr = current_sum_sub_arr
+max_sum = current_sum
+
+At last, return max_sum, max_sum_sub_arr as a tuple.
+
+Complexity Analysis:
+TC: O(n)
+SC: O(n)
 """
 
 
