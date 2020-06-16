@@ -18,10 +18,14 @@ Returns: (int), (int): Two maximum sums
 
 Solution:
 ---------
-Sort the array with merge sort from larger to smaller.
-Now, construct two numbers. First with the odd indices of the sorted array.
-Second with the even indices of the sorted array. Return these 2 numbers
-in a list.
+We know that, largest number can be found from digits (0-9) when they are
+placed from larger to smaller form. That means formed in descending order.
+
+Sort the array with merge sort from larger to smaller. Construct 2 numbers.
+First with the odd indices of the sorted array. Second with the even indices
+of the sorted array. Return these 2 numbers in a list.
+
+Example:
 Input: [1, 2, 3, 4, 5]
 Sorted array from max to min numbers: [5, 4, 3, 2, 1]
 x = 531
