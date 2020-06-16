@@ -9,10 +9,11 @@ Output: [0, 0, 0, 1, 1, 1, 2, 2, 2, 2, 2]
 Note: If we can get the function to put the 0s and 2s in the correct positions,
 this will aotomatically cause the 1s to be in the correct positions as well.
 
-The idea is to put 0 and 2 in their correct positions, which will make sure
-all the 1s are automatically placed in their right positions
+Solution:
+The idea is to put 0s and 2s in their correct positions,
+then 1s are automatically placed in their right positions
 
-Solution: Initialize next_pos_0 to the first index and next_pos_2
+Initialize next_pos_0 to the first index and next_pos_2
 to the last index. We'll keep the 0's at the beginning and 2's at the ending.
 Thus. 1's will stay in the middle.
 
@@ -20,6 +21,7 @@ We search of 0 and 2. If we find a 0, we bring it to it's next_pos_0.
 If we find a 2, we throw it to it's next_pos_2. For both operations, we swap
 the values in thoses indexes.
 
+Complexity Analysis:
 TC: O(n)
 SC: O(1)
 In-place algorithm.
