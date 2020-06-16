@@ -1,4 +1,6 @@
 """
+Task 7: Routing in a Web Server with a Trie
+
 Complexity Analysis:
 SC is constant as for all queries it will return a tuple (code, handler)
 
@@ -121,7 +123,7 @@ class Router:
 # remove the 'not found handler' if you did not implement this
 router = Router("root handler")
 router.add_handler("/home/about", "about handler")  # add a route
-router.add_handler("/profiles/cristina-artist", "Hi! This is Christina")
+router.add_handler("/profiles/cristina-artist", "Hi! This is Christina.")
 
 
 def test(router, path):

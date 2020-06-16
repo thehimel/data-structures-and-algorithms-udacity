@@ -78,3 +78,43 @@ Complexity Analysis:
 TC: O(n)
 SC: O(1)
 In-place algorithm.
+
+Task 5: Autocomplete with Trie - Finding Suffixes
+-------------------------------------------------
+Get the node representing the prefix.
+Return all suffixes of that node found with recursive operation.
+
+Complexity Analysis:
+TC: O(k)
+SC: O(k)
+m = suffixes found from the prefix.
+n = total number of suffixes.
+k = total length of all suffixes
+k = len(prefix) + (len(m1) + len(m2) + len(m3) + ......... len(mn))
+
+
+Task 6: Unsorted Integer Array
+------------------------------
+Assume the first item is the min_item and max_item.
+Traverse throug the input, and if you find any better value update them.
+
+Complexity Analysis:
+TC: O(n)
+SC: O(1)
+In-place algorithm.
+
+Complexity Analysis:
+SC is constant as for all queries it will return a tuple (code, handler)
+
+k = length of the path list.
+TC: O(k)
+SC: O(1)
+
+Task 7: Routing in a Web Server with a Trie
+-------------------------------------------
+Complexity Analysis:
+SC is constant as for all queries it will return a tuple (code, handler)
+
+k = length of the path list.
+TC: O(k)
+SC: O(1)
