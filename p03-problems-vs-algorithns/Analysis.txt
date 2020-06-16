@@ -61,6 +61,7 @@ SC: T(merge_sort) + O(n) => O(n) + O(n) => O(n)
 TC: O(nlog(n))
 SC: O(n)
 
+
 Task 4: Dutch National Flag Problem
 -----------------------------------
 Put 0s and 2s in their correct positions,
@@ -78,6 +79,7 @@ Complexity Analysis:
 TC: O(n)
 SC: O(1)
 In-place algorithm.
+
 
 Task 5: Autocomplete with Trie - Finding Suffixes
 -------------------------------------------------
@@ -109,6 +111,7 @@ SC is constant as for all queries it will return a tuple (code, handler)
 k = length of the path list.
 TC: O(k)
 SC: O(1)
+
 
 Task 7: Routing in a Web Server with a Trie
 -------------------------------------------
