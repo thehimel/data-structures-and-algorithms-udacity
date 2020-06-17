@@ -64,9 +64,6 @@ def dijkstra(graph, source):
             elif result[node] < result[min_node]:
                 min_node = node
 
-        if min_node is None:
-            break
-
         # known distance of min_node
         current_distance = result[min_node]
 
