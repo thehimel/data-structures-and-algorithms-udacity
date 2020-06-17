@@ -27,7 +27,10 @@ If number < mid_square, search left, else search right.
 Complexity Analysis:
 At every step, we're dividing our search portion with binary search.
 And we know, binary search has TC of O(log(n)).
-Taking no extra space. Thus, in-place algorithm.
+Generally recursive binary search takes O(log(n)) space. But here our input
+is not an array. And we are logically considering our input limit. Notice,
+we don't have any array to hold the positions at every pass. Thus, the
+algorithm is taking no extra space and it is an in-place algorithm.
 
 TC: O(log(n))
 SC: O(1)
