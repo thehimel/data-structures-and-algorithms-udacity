@@ -103,7 +103,7 @@ graph.add_edge('B', 'C', 1)
 graph.add_edge('C', 'E', 2)
 graph.add_edge('E', 'D', 1)
 
-graph.print_graph()
+# graph.print_graph()
 
 # {'A': 0, 'D': 2, 'B': 3, 'E': 3, 'C': 4}
 print(dijkstra(graph, 'A'))
