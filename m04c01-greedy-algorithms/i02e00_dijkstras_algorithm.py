@@ -25,11 +25,20 @@ class Graph:
     def add_node(self, value):
         self.nodes.add(value)
 
+    def add_nodes(self, nodes):
+        for node in nodes:
+            self.add_node(node)
+
     def add_edge(self, from_node, to_node, distance):
         self.friends[from_node].append(to_node)
         self.friends[to_node].append(from_node)
         self.distances[(from_node, to_node)] = distance
         self.distances[(to_node, from_node)] = distance
+
+    def add_edges(self, edges):
+        for (from_node, to_node) in edges:
+            distance = edges[(from_node, to_node)]
+            self.add_edge(from_node, to_node, distance)
 
     def print_graph(self):
         print("Set of Nodes are: ", self.nodes)
@@ -90,50 +99,52 @@ def dijkstra(graph, source):
     return output
 
 
+def test(graph, source):
+    output = dijkstra(graph, source)
+
+    for friend in output:
+        print(f'{source}->{friend}={output[friend]}', end=' | ')
+    print()
+
+
+def create_graph(nodes, edges):
+    graph = Graph()
+    graph.add_nodes(nodes)
+    graph.add_edges(edges)
+    return graph
+
+
 # Test 1
-graph = Graph()
-for node in ['A', 'B', 'C', 'D', 'E']:
-    graph.add_node(node)
-
-graph.add_edge('A', 'B', 3)
-graph.add_edge('A', 'D', 2)
-graph.add_edge('B', 'D', 4)
-graph.add_edge('B', 'E', 6)
-graph.add_edge('B', 'C', 1)
-graph.add_edge('C', 'E', 2)
-graph.add_edge('E', 'D', 1)
-
+nodes = ['A', 'B', 'C', 'D', 'E']
+edges = {
+    ('A', 'B'): 3, ('A', 'D'): 2, ('B', 'D'): 4, ('B', 'E'): 6,
+    ('B', 'C'): 1, ('C', 'E'): 2, ('E', 'D'): 1
+}
+graph = create_graph(nodes, edges)
 # graph.print_graph()
 
 # {'A': 0, 'D': 2, 'B': 3, 'E': 3, 'C': 4}
-print(dijkstra(graph, 'A'))
+test(graph, 'A')
 
 # Test 2
-graph = Graph()
-for node in ['A', 'B', 'C']:
-    graph.add_node(node)
-
-graph.add_edge('A', 'B', 5)
-graph.add_edge('B', 'C', 5)
-graph.add_edge('A', 'C', 10)
+nodes = ['A', 'B', 'C']
+edges = {
+    ('A', 'B'): 5, ('B', 'C'): 5, ('A', 'C'): 10
+}
+graph = create_graph(nodes, edges)
 
 # {'A': 0, 'B': 5, 'C': 10}
-print(dijkstra(graph, 'A'))
+test(graph, 'A')
 
 # Test 3
-graph = Graph()
-for node in ['A', 'B', 'C', 'D', 'E', 'F']:
-    graph.add_node(node)
-
-graph.add_edge('A', 'B', 5)
-graph.add_edge('A', 'C', 4)
-graph.add_edge('D', 'C', 1)
-graph.add_edge('B', 'C', 2)
-graph.add_edge('A', 'D', 2)
-graph.add_edge('B', 'F', 2)
-graph.add_edge('C', 'F', 3)
-graph.add_edge('E', 'F', 2)
-graph.add_edge('C', 'E', 1)
+nodes = ['A', 'B', 'C', 'D', 'E', 'F']
+edges = {
+    ('A', 'B'): 5, ('A', 'C'): 4, ('D', 'C'): 1, ('B', 'C'): 2,
+    ('A', 'D'): 2, ('B', 'F'): 2, ('C', 'F'): 3, ('E', 'F'): 2,
+    ('C', 'E'): 1
+}
+graph = create_graph(nodes, edges)
 
 # {'A': 0, 'C': 3, 'B': 5, 'E': 4, 'D': 2, 'F': 6}
-print(dijkstra(graph, 'A'))
+test(graph, 'A')
+test(graph, 'B')
