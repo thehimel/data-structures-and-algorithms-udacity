@@ -80,8 +80,7 @@ def dijkstra(graph, source):
                 # 3. If the calculated distance of the unvisited neighbour is
                 # less than the already known distance in result dictionary,
                 # update the shortest distance in the result dictionary.
-                if ((neighbour not in result) or (
-                        distance < result[neighbour])):
+                if distance < result[neighbour]:
                     result[neighbour] = distance
 
                     # 4. If there is an update in the result dictionary,
