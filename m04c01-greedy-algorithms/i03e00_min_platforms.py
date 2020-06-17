@@ -39,6 +39,8 @@ def min_platforms(arrival, departure):
     if(len(arrival) != len(departure)):
         return -1
 
+    array_length = len(arrival)
+
     # Sort both the lists.
     arrival.sort()
     departure.sort()
@@ -51,11 +53,12 @@ def min_platforms(arrival, departure):
     max_platform_required = 1
 
     # Iterate such that (i-j) will represent platform_required at that moment
+    # Assume the first train has arrived
     i = 1
     j = 0
 
     # Traverse the arrival list with iterator `i`, and departure with `j`
-    while i < len(arrival) and j < len(arrival):
+    while i < array_length and j < array_length:
 
         # if i^th arrival is scheduled before than j^th departure,
         # increment platform_required and i as well.
