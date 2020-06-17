@@ -54,6 +54,10 @@ input = [25, 0, 145, 59, 61, 999, 55]
 output = (0, 999)
 test(input, output)
 
+input = [-10, -100, -99, 0, -50, -999]
+output = (-999, 0)
+test(input, output)
+
 # Test edge cases
 input = []
 output = None
