@@ -40,12 +40,12 @@ class Graph:
 # Find the shortest path from the source node to every other node in the graph
 def dijkstra(graph, source):
 
-    result = {}
-    result[source] = 0
+    output = {}
+    output[source] = 0
 
     for node in graph.nodes:
         if (node != source):
-            result[node] = sys.maxsize
+            output[node] = sys.maxsize
 
     unvisited = set(graph.nodes)
 
@@ -61,33 +61,33 @@ def dijkstra(graph, source):
         for node in unvisited:
             if best_friend is None:
                 best_friend = node
-            elif result[node] < result[best_friend]:
+            elif output[node] < output[best_friend]:
                 best_friend = node
 
         # known distance of best_friend
-        best_distance = result[best_friend]
+        best_distance = output[best_friend]
 
-        # 2. For the current node, find all the unvisited friends. For this,
-        # you have calculate the distance of each unvisited friend.
+        # 2. For the current node, find all the unvisited friends.
+        # Calculate the distance of each unvisited friend.
         for friend in graph.friends[best_friend]:
             if friend in unvisited:
                 distance = best_distance + graph.distances[(
                     best_friend, friend)]
 
                 # 3. If the calculated distance of the unvisited friend is
-                # less than the already known distance in result dictionary,
-                # update the shortest distance in the result dictionary.
-                if distance < result[friend]:
-                    result[friend] = distance
+                # less than the already known distance in output dictionary,
+                # update the shortest distance in the output dictionary.
+                if distance < output[friend]:
+                    output[friend] = distance
 
-                    # 4. If there is an update in the result dictionary,
+                    # 4. If there is an update in the output dictionary,
                     # update the path dictionary as well for the same key.
                     path[friend] = best_friend
 
         # 5. Remove the current node from the unvisited set.
         unvisited.remove(best_friend)
 
-    return result
+    return output
 
 
 # Test 1
