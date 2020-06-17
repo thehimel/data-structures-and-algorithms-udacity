@@ -108,7 +108,7 @@ def create_graph(nodes, edges):
 
 def test(graph, source):
     output = dijkstra(graph, source)
-
+    # print(output)
     for friend in output:
         print(f'{source}->{friend}={output[friend]}', end=' | ')
     print()
