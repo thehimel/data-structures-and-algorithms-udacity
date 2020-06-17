@@ -2,11 +2,9 @@
 Task 7: Routing in a Web Server with a Trie
 
 Complexity Analysis:
-SC is constant as for all queries it will return a tuple (code, handler)
-
 k = length of the path list.
 TC: O(k)
-SC: O(1)
+SC: O(k)
 """
 
 
