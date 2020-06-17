@@ -60,11 +60,18 @@ def binary_search(start, end, number):
         return binary_search(mid+1, end, number)
 
 
-print("Pass" if (0 == sqrt(0)) else "Fail")
-print("Pass" if (1 == sqrt(1)) else "Fail")
+def test(input, output):
+    print("Pass" if sqrt(input) == output else "Fail")
 
-print("Pass" if (3 == sqrt(9)) else "Fail")
-print("Pass" if (4 == sqrt(16)) else "Fail")
-print("Pass" if (5 == sqrt(27)) else "Fail")
-print("Pass" if (25 == sqrt(625)) else "Fail")
-print("Pass" if (25 == sqrt(630)) else "Fail")
+
+# Test general cases
+test(0, 0)
+test(1, 1)
+test(9, 3)
+test(16, 4)
+test(625, 25)
+test(630, 25)
+
+# Test edge cases
+test(-1, None)
+test(999999999999999, 31622776)
