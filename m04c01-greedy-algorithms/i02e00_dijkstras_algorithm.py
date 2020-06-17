@@ -68,21 +68,21 @@ def dijkstra(graph, source):
         best_distance = result[best_friend]
 
         # 2. For the current node, find all the unvisited friends. For this,
-        # you have calculate the distance of each unvisited neighbour.
-        for neighbour in graph.friends[best_friend]:
-            if neighbour in unvisited:
+        # you have calculate the distance of each unvisited friend.
+        for friend in graph.friends[best_friend]:
+            if friend in unvisited:
                 distance = best_distance + graph.distances[(
-                    best_friend, neighbour)]
+                    best_friend, friend)]
 
-                # 3. If the calculated distance of the unvisited neighbour is
+                # 3. If the calculated distance of the unvisited friend is
                 # less than the already known distance in result dictionary,
                 # update the shortest distance in the result dictionary.
-                if distance < result[neighbour]:
-                    result[neighbour] = distance
+                if distance < result[friend]:
+                    result[friend] = distance
 
                     # 4. If there is an update in the result dictionary,
                     # update the path dictionary as well for the same key.
-                    path[neighbour] = best_friend
+                    path[friend] = best_friend
 
         # 5. Remove the current node from the unvisited set.
         unvisited.remove(best_friend)
