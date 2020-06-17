@@ -49,7 +49,7 @@ def dijkstra(graph, source):
 
     unvisited = set(graph.nodes)
 
-    path = {}
+    best_friends = {}
 
     '''THE GREEDY APPROACH'''
     # As long as unvisited is non-empty
@@ -80,9 +80,9 @@ def dijkstra(graph, source):
                 if distance < output[friend]:
                     output[friend] = distance
 
-                    # 4. If there is an update in the output dictionary,
-                    # update the path dictionary as well for the same key.
-                    path[friend] = best_friend
+                    # 4. If there is an update in the output dictionary, means
+                    # best_friend is updated. Thus, update best_friends dict.
+                    best_friends[friend] = best_friend
 
         # 5. Remove the current node from the unvisited set.
         unvisited.remove(best_friend)
