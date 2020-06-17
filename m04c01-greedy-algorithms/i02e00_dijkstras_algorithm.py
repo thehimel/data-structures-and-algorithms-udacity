@@ -99,19 +99,19 @@ def dijkstra(graph, source):
     return output
 
 
+def create_graph(nodes, edges):
+    graph = Graph()
+    graph.add_nodes(nodes)
+    graph.add_edges(edges)
+    return graph
+
+
 def test(graph, source):
     output = dijkstra(graph, source)
 
     for friend in output:
         print(f'{source}->{friend}={output[friend]}', end=' | ')
     print()
-
-
-def create_graph(nodes, edges):
-    graph = Graph()
-    graph.add_nodes(nodes)
-    graph.add_edges(edges)
-    return graph
 
 
 # Test 1
