@@ -65,13 +65,13 @@ def dijkstra(graph, source):
                 best_friend = node
 
         # known distance of best_friend
-        current_distance = result[best_friend]
+        best_distance = result[best_friend]
 
         # 2. For the current node, find all the unvisited neighbours. For this,
         # you have calculate the distance of each unvisited neighbour.
         for neighbour in graph.neighbours[best_friend]:
             if neighbour in unvisited:
-                distance = current_distance + graph.distances[(
+                distance = best_distance + graph.distances[(
                     best_friend, neighbour)]
 
                 # 3. If the calculated distance of the unvisited neighbour is
