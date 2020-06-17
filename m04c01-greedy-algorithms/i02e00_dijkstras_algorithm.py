@@ -4,6 +4,9 @@ from collections import defaultdict
 
 
 """
+Complexity Analysis:
+TC: O(n^2)
+
 class Graph:
 __init__():
     - nodes: A set cannot contain duplicate nodes
