@@ -90,7 +90,7 @@ def dijkstra(graph, source):
             elif output[node] < output[best_friend]:
                 best_friend = node
 
-        # known distance of best_friend
+        # Known distance of best_friend
         best_distance = output[best_friend]
 
         # 2
