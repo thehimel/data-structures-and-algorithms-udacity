@@ -59,12 +59,10 @@ def dijkstra(graph, source):
         # 1. Find the unvisited node having smallest known distance
         # from the source node.
         for node in unvisited:
-            if node in result:
-
-                if min_node is None:
-                    min_node = node
-                elif result[node] < result[min_node]:
-                    min_node = node
+            if min_node is None:
+                min_node = node
+            elif result[node] < result[min_node]:
+                min_node = node
 
         if min_node is None:
             break
