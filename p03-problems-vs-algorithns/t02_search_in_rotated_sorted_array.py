@@ -70,7 +70,7 @@ def linear_search(arr, number):
     return -1
 
 
-def test_function(test_case):
+def test(test_case):
     arr = test_case[0]
     number = test_case[1]
     if linear_search(arr, number) == rotated_array_search(arr, number):
@@ -79,9 +79,10 @@ def test_function(test_case):
         print("Fail")
 
 
-test_function([[], 20])
-test_function([[6, 7, 8, 9, 10, 1, 2, 3, 4], 6])
-test_function([[6, 7, 8, 9, 10, 1, 2, 3, 4], 1])
-test_function([[6, 7, 8, 1, 2, 3, 4], 8])
-test_function([[6, 7, 8, 1, 2, 3, 4], 1])
-test_function([[6, 7, 8, 1, 2, 3, 4], 10])
+test([[], 20])
+test([[6, 7, 8, 9, 10, 1, 2, 3, 4], 6])
+test([[6, 7, 8, 9, 10, 1, 2, 3, 4], 1])
+test([[6, 7, 8, 1, 2, 3, 4], 8])
+test([[6, 7, 8, 1, 2, 3, 4], 1])
+test([[6, 7, 8, 1, 2, 3, 4], 10])
+test([[-7, -6, -5, -4, -3, -2, -1, -10, -9, -8], -9])
