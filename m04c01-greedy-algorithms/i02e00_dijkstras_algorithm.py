@@ -24,7 +24,7 @@ distance of each unvisited friend.
 known distance in output dictionary, update the shortest distance in the
 output dictionary.
 
-4. If there is an update in the output dictionary, means the best_friend is
+4. If there is an update in the output dictionary, means the nearest_node is
 updated. Thus, update best_friends dictionary.
 
 5. Remove the current node from the unvisited set.
@@ -80,33 +80,33 @@ def dijkstra(graph, source):
 
     # As long as unvisited is non-empty
     while unvisited:
-        best_friend = None
+        nearest_node = None
 
         # 1
         for node in unvisited:
-            if best_friend is None:
-                best_friend = node
-            elif output[node] < output[best_friend]:
-                best_friend = node
+            if nearest_node is None:
+                nearest_node = node
+            elif output[node] < output[nearest_node]:
+                nearest_node = node
 
-        # Known distance of best_friend
-        best_distance = output[best_friend]
+        # Known distance of nearest_node
+        distance_upto_nearest_node = output[nearest_node]
 
         # 2
-        for friend in graph.friends[best_friend]:
+        for friend in graph.friends[nearest_node]:
             if friend in unvisited:
-                distance = best_distance + graph.distances[(
-                    best_friend, friend)]
+                distance = distance_upto_nearest_node + graph.distances[(
+                    nearest_node, friend)]
 
                 # 3
                 if distance < output[friend]:
                     output[friend] = distance
 
                     # 4
-                    best_friends[friend] = best_friend
+                    best_friends[friend] = nearest_node
 
         # 5
-        unvisited.remove(best_friend)
+        unvisited.remove(nearest_node)
 
     return output
 
