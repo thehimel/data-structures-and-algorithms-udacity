@@ -13,6 +13,24 @@ __init__():
     shows the distance between 'A' to 'B' is 6 units
 
 add_edge(): Graph undirected / bidirectional
+
+Algorithm:
+1. Find the unvisited node having smallest known distance from the source node.
+
+2. For the current node, find all the unvisited friends. Calculate the
+distance of each unvisited friend.
+
+3. If the calculated distance of the unvisited friend is less than the already
+known distance in output dictionary, update the shortest distance in the
+output dictionary.
+
+4. If there is an update in the output dictionary, means the best_friend is
+updated. Thus, update best_friends dictionary.
+
+5. Remove the current node from the unvisited set.
+
+Note: The numbers of the algorithm are associated with the # numbers
+in the code. Match the numbers with the code to get detailed information.
 """
 
 
@@ -65,8 +83,7 @@ def dijkstra(graph, source):
     while unvisited:
         best_friend = None
 
-        # 1. Find the unvisited node having smallest known distance
-        # from the source node.
+        # 1
         for node in unvisited:
             if best_friend is None:
                 best_friend = node
@@ -76,24 +93,20 @@ def dijkstra(graph, source):
         # known distance of best_friend
         best_distance = output[best_friend]
 
-        # 2. For the current node, find all the unvisited friends.
-        # Calculate the distance of each unvisited friend.
+        # 2
         for friend in graph.friends[best_friend]:
             if friend in unvisited:
                 distance = best_distance + graph.distances[(
                     best_friend, friend)]
 
-                # 3. If the calculated distance of the unvisited friend is
-                # less than the already known distance in output dictionary,
-                # update the shortest distance in the output dictionary.
+                # 3
                 if distance < output[friend]:
                     output[friend] = distance
 
-                    # 4. If there is an update in the output dictionary, means
-                    # best_friend is updated. Thus, update best_friends dict.
+                    # 4
                     best_friends[friend] = best_friend
 
-        # 5. Remove the current node from the unvisited set.
+        # 5
         unvisited.remove(best_friend)
 
     return output
