@@ -14,7 +14,7 @@ __init__():
 
 add_edge(): Graph undirected / bidirectional
 
-Algorithm:
+Algorithm (Greedy Approach):
 1. Find the unvisited node having smallest known distance from the source node.
 
 2. For the current node, find all the unvisited friends. Calculate the
@@ -78,7 +78,6 @@ def dijkstra(graph, source):
 
     best_friends = {}
 
-    '''THE GREEDY APPROACH'''
     # As long as unvisited is non-empty
     while unvisited:
         best_friend = None
