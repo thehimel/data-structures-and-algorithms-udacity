@@ -97,22 +97,22 @@ def dijkstra(graph, source):
 
 
 # Test 1
-testGraph = Graph()
+graph = Graph()
 for node in ['A', 'B', 'C', 'D', 'E']:
-    testGraph.add_node(node)
+    graph.add_node(node)
 
-testGraph.add_edge('A', 'B', 3)
-testGraph.add_edge('A', 'D', 2)
-testGraph.add_edge('B', 'D', 4)
-testGraph.add_edge('B', 'E', 6)
-testGraph.add_edge('B', 'C', 1)
-testGraph.add_edge('C', 'E', 2)
-testGraph.add_edge('E', 'D', 1)
+graph.add_edge('A', 'B', 3)
+graph.add_edge('A', 'D', 2)
+graph.add_edge('B', 'D', 4)
+graph.add_edge('B', 'E', 6)
+graph.add_edge('B', 'C', 1)
+graph.add_edge('C', 'E', 2)
+graph.add_edge('E', 'D', 1)
 
-testGraph.print_graph()
+graph.print_graph()
 
 # {'A': 0, 'D': 2, 'B': 3, 'E': 3, 'C': 4}
-print(dijkstra(testGraph, 'A'))
+print(dijkstra(graph, 'A'))
 
 # Test 2
 graph = Graph()
