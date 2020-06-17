@@ -54,25 +54,25 @@ def dijkstra(graph, source):
     '''THE GREEDY APPROACH'''
     # As long as unvisited is non-empty
     while unvisited:
-        min_node = None
+        best_friend = None
 
         # 1. Find the unvisited node having smallest known distance
         # from the source node.
         for node in unvisited:
-            if min_node is None:
-                min_node = node
-            elif result[node] < result[min_node]:
-                min_node = node
+            if best_friend is None:
+                best_friend = node
+            elif result[node] < result[best_friend]:
+                best_friend = node
 
-        # known distance of min_node
-        current_distance = result[min_node]
+        # known distance of best_friend
+        current_distance = result[best_friend]
 
         # 2. For the current node, find all the unvisited neighbours. For this,
         # you have calculate the distance of each unvisited neighbour.
-        for neighbour in graph.neighbours[min_node]:
+        for neighbour in graph.neighbours[best_friend]:
             if neighbour in unvisited:
                 distance = current_distance + graph.distances[(
-                    min_node, neighbour)]
+                    best_friend, neighbour)]
 
                 # 3. If the calculated distance of the unvisited neighbour is
                 # less than the already known distance in result dictionary,
@@ -82,10 +82,10 @@ def dijkstra(graph, source):
 
                     # 4. If there is an update in the result dictionary,
                     # update the path dictionary as well for the same key.
-                    path[neighbour] = min_node
+                    path[neighbour] = best_friend
 
         # 5. Remove the current node from the unvisited set.
-        unvisited.remove(min_node)
+        unvisited.remove(best_friend)
 
     return result
 
