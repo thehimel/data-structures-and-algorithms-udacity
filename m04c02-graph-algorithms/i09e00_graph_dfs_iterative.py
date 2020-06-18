@@ -7,6 +7,9 @@ Implement DFS
 Using what you know about DFS for trees, apply this to graphs.
 Implement the dfs_search to return the GraphNode with the value target
 starting at the root_node.
+
+Note: To visualize the algorithms, first convert the graph to a tree like
+graph with the adjacency list and then go along the algorithm in paper.
 """
 
 
@@ -90,7 +93,28 @@ graph.add_edge(nodeS, nodeR)
 print(graph.adjacency_list())
 
 # Tests
+# G -> A (1st child of G)
+assert nodeA == dfs_search(nodeG, 'A')
+
+# S -> R -> G -> A
+# S -> R (1st child of S) -> G (1st child of R) -> A (1st child of G)
 assert nodeA == dfs_search(nodeS, 'A')
+
+# P -> R -> S
 assert nodeS == dfs_search(nodeP, 'S')
+
+# H -> G -> A -> R
 assert nodeR == dfs_search(nodeH, 'R')
 print('All tests passed.')
+
+"""
+     G
+   / | \
+ /   |   \
+H    A -- R
+|       / |
+|     /   |
+|   /     |
+| /       |
+P         S
+"""
