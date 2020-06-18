@@ -31,7 +31,7 @@ def create_graph(num_islands, bridge_config):
     return graph
 
 
-# Helper function to find minimum cost of connecting all islands
+# Function to find minimum cost of connecting all islands
 def minimum_cost(graph):
     # start with vertex 1 (any vertex can be chosen)
     start_vertex = 1
@@ -82,6 +82,14 @@ def test_function(test_case):
         print("Fail")
 
 
+"""
+(1) --- 1 --- (2)
+ |\\           |
+ 3   ` 10      4
+ |        ` \\ |
+(4) --- 2 --- (3)
+"""
+# bridge_config: [[island_1, island_2, cost_1], [island_2, island_3, cost_4]..]
 num_islands = 4
 bridge_config = [[1, 2, 1], [2, 3, 4], [1, 4, 3], [4, 3, 2], [1, 3, 10]]
 solution = 6
