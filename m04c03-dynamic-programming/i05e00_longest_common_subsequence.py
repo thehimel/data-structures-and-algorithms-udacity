@@ -43,12 +43,19 @@ def lcs(string_a, string_b):
 
             # If there is a match, fill that grid cell with the value
             # to the top-left of that cell plus one
+
+            # If we are at table[a+1, b+1],
+            # reduce a to get left_cell and reduce b to get top_cell.
+            # Thus, left_cell = table[a, b+1], top_cell = table[a+1, b]
             if char_a == char_b:
                 value = lookup_table[char_a_i][char_b_i] + 1
                 lookup_table[char_a_i + 1][char_b_i + 1] = value
 
-            # If there is not a match, take the maximum value from either
-            # directly to the left or the top cell
+            # If there is not a match, take the max(left_cell, top_cell)
+
+            # If we are at table[a+1, b+1],
+            # reduce a by 1 to get left_cell and reduce b by 1 to get top_cell.
+            # Thus, left_cell = table[a, b+1], top_cell = table[a+1, b]
             else:
                 left_cell = lookup_table[char_a_i][char_b_i + 1]
                 top_cell = lookup_table[char_a_i + 1][char_b_i]
