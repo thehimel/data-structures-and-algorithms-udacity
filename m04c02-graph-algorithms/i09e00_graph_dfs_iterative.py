@@ -53,7 +53,6 @@ class Graph(object):
 # Solution
 def dfs_search(root_node, target):
     visited = set()  # Sets are faster for lookups
-
     stack = list()
     stack.append(root_node)  # Start with a given root node
 
