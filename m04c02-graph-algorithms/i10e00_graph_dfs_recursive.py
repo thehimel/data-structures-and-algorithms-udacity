@@ -44,14 +44,14 @@ class Graph(object):
 
 
 # Solution
-def dfs_search(start_node, search_value):
-    visited = set()               # Set to keep track of visited nodes.
-    return dfs(start_node, visited, search_value)
+def dfs_search(start_node, target):
+    visited = set()
+    return dfs(start_node, visited, target)
 
 
 # Recursive function
-def dfs(node, visited, search_value):
-    if node.value == search_value:
+def dfs(node, visited, target):
+    if node.value == target:
         return node
 
     visited.add(node)
@@ -60,7 +60,7 @@ def dfs(node, visited, search_value):
     # Conditional recurse on each neighbour
     for child in node.children:
         if (child not in visited):
-            result = dfs(child, visited, search_value)
+            result = dfs(child, visited, target)
 
     return result
 
