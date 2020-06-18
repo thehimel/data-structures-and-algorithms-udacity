@@ -72,6 +72,8 @@ def dfs_search(root_node, target):
             if (child not in visited) and (child not in stack):
                 stack.append(child)
 
+    return None  # If not found
+
 
 nodeG = GraphNode('G')
 nodeR = GraphNode('R')
@@ -97,6 +99,8 @@ assert nodeA == dfs_search(nodeG, 'A')
 assert nodeA == dfs_search(nodeS, 'A')
 assert nodeS == dfs_search(nodeP, 'S')
 assert nodeR == dfs_search(nodeH, 'R')
+
+assert None is dfs_search(nodeG, 'X')
 print('All tests passed.')
 
 """
