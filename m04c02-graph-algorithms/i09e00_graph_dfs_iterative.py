@@ -64,11 +64,9 @@ def dfs_search(root_node, target):
         if current_node.value == target:
             return current_node
 
-        # Check all the neighbours
+        # Check all the children. If a node hasn't been visited yet,
+        # and not available in the stack already, push it in the stack.
         for child in current_node.children:
-
-            # If a node hasn't been visited before,
-            # and not available in the stack already.
             if (child not in visited) and (child not in stack):
                 stack.append(child)
 
