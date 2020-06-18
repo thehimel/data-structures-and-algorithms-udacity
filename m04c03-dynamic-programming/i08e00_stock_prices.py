@@ -19,14 +19,6 @@ at a price of 3 and sell at a price of 8 to yield a maximum profit of 5.
 In other words, you are looking for the greatest possible difference between
 two numbers in the array.
 
-Simplified Question: Given the list of stock prices. Return the max profit
-that can be achieved by buying the stock at the cheapest prices and selling
-it at the highest price. You have to buy before selling.
-Profit = Selling Price - Buying Price
-
-Aim: Our aim is to find the buying price and the selling price such that our
-profit is maximum.
-
 The Idea
 The given array has the prices of a single stock at 13 different timestamps.
 The idea is to pick two timestamps:
@@ -35,6 +27,29 @@ The idea is to pick two timestamps:
 such that the buy is made before a sell. We will keep track of our max profit
 while iterating over the list. At each step we will make the greedy choice by
 choosing prices such that our profit is maximum.
+
+
+Simplified Question:
+Given the list of stock prices. Return the max profit
+that can be achieved by buying the stock at the cheapest prices and selling
+it at the highest price. You have to buy before selling.
+Profit = Selling Price - Buying Price
+
+Aim:
+Our aim is to find the buying price and the selling price such that our
+profit is maximum.
+
+Solution:
+We take min_price_index = 0 and max_price_index = 1. Now, if we find any
+arr[i] that is less than our min_price, we update our min_price_index. But, if
+we find an arr[i] that is greater than our max_price, to update our max_price,
+we have to check whether our profit is increasing or not. If our profit is
+increasing with that arr[i] > max_price, then we update the max_price.
+
+For example, prices = [54, 18, 20, 9, 11, 999, 48, 23, 1, 7, 34, 2, 45, 67].
+Here, at index = 5, min_price = 9, max_price = 999, profit = 990.
+Then, at index = 8, we get our new min_price = 1. But, 67 is not our max_price
+as our previous profit 990 is a better option. Thus, max_profit = 990.
 
 Complexity Analysis:
 TC: O(n)
