@@ -1,12 +1,26 @@
 """
+Implementatio of Minimum Spanning Tree with Prim's Algorithm
+
+Task: Connecting Islands with Prim's Algorithms
 param: num_islands - number of islands
 param: bridge_config - bridge configuration
 return: cost (int) minimum cost of connecting all islands
+Note: This task is same as Minimum Spanning Tree with Prim's Algorithm.
+Instead of vertices we are using the term islands.
+
+For theory:
+Jenny's Lectures - YouTube
+Minimum Spanning Tree: https://www.youtube.com/watch?v=vNhvBrc02G4
+Prim's Algorithm: https://www.youtube.com/watch?v=ZtZaR7EcI5Y
+
+Michael Sambol - YouTube
+Prim's Algorithm: https://www.youtube.com/watch?v=cplfcGZmX7I
 """
-# Solution
+
 
 # The following Solution makes use of one of Python's PriorityQueue (heapq)
 # Details - https://thomas-cokelaer.info/tutorials/python/module_heapq.html
+
 import heapq
 
 
@@ -27,12 +41,15 @@ def create_graph(num_islands, bridge_config):
         graph[source].append((destination, cost))
         graph[destination].append((source, cost))
 
-    print("graph = ", graph)
+    # print("graph = ", graph)
     return graph
 
 
 # Function to find minimum cost of connecting all islands
 def minimum_cost(graph):
+    # If you print the adjacency list of the graph, you'll see that the
+    # index 0 is empty. We won't use the index 0 and we'll start from index 1.
+
     # start with vertex 1 (any vertex can be chosen)
     start_vertex = 1
 
