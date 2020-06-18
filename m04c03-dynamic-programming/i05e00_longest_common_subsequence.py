@@ -50,10 +50,11 @@ def lcs(string_a, string_b):
             # If there is not a match, take the maximum value from either
             # directly to the left or the top cell
             else:
-                x = lookup_table[char_a_i][char_b_i + 1]
-                y = lookup_table[char_a_i + 1][char_b_i]
+                left_cell = lookup_table[char_a_i][char_b_i + 1]
+                top_cell = lookup_table[char_a_i + 1][char_b_i]
+                max_value = max(left_cell, top_cell)
 
-                lookup_table[char_a_i + 1][char_b_i + 1] = max(x, y)
+                lookup_table[char_a_i + 1][char_b_i + 1] = max_value
 
     # the bottom-right cell will hold the non-normalized LCS length value.
     return lookup_table[-1][-1]
