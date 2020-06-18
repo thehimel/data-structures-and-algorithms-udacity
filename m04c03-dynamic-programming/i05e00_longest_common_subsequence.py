@@ -41,16 +41,16 @@ def lcs(string_a, string_b):
 
         for char_b_i, char_b in enumerate(string_b):
 
-            # If there is a match, grid cell = top_left_cell + 1
+            # If there is a match, grid_cell = top_left_cell + 1
 
             # If we are at table[a+1, b+1],
             # reduce a by 1 and b by 1 to get top_left_cell.
             # Thus, top_left_cell = table[a, b]
             if char_a == char_b:
-                value = lookup_table[char_a_i][char_b_i] + 1
-                lookup_table[char_a_i + 1][char_b_i + 1] = value
+                top_left_cell = lookup_table[char_a_i][char_b_i]
+                lookup_table[char_a_i + 1][char_b_i + 1] = top_left_cell + 1
 
-            # If there is not a match, take the max(left_cell, top_cell)
+            # If there is not a match, grid_cell = max(left_cell, top_cell)
 
             # If we are at table[a+1, b+1],
             # reduce a by 1 to get left_cell and reduce b by 1 to get top_cell.
