@@ -73,6 +73,18 @@ def dfs_search(root_node, target):
     return None  # If not found
 
 
+"""
+     G
+   / | \
+ /   |   \
+H    A -- R
+|       / |
+|     /   |
+|   /     |
+| /       |
+P         S
+"""
+
 nodeG = GraphNode('G')
 nodeR = GraphNode('R')
 nodeA = GraphNode('A')
@@ -100,15 +112,3 @@ assert nodeR == dfs_search(nodeH, 'R')
 
 assert None is dfs_search(nodeG, 'X')
 print('All tests passed.')
-
-"""
-     G
-   / | \
- /   |   \
-H    A -- R
-|       / |
-|     /   |
-|   /     |
-| /       |
-P         S
-"""
