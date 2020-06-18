@@ -27,7 +27,7 @@ def create_graph(num_islands, bridge_config):
         graph[source].append((destination, cost))
         graph[destination].append((source, cost))
 
-    # print("graph = ",graph)
+    # print("graph = ", graph)
     return graph
 
 
