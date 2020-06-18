@@ -54,7 +54,7 @@ def bfs_search(start_node, target):
             return current_node
 
         for child in current_node.children:
-            if child not in visited:
+            if child not in visited and child not in queue:
                 queue.append(child)
 
 
