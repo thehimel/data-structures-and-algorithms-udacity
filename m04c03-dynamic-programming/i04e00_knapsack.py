@@ -45,3 +45,4 @@ tests = [
 
 for test in tests:
     assert test['correct_output'] == knapsack_max_value(**test['input'])
+print('All tests passed.')
