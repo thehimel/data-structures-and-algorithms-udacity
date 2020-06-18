@@ -49,11 +49,12 @@ class Graph(object):
 
 # Solution
 def dfs_search(root_node, target):
-    visited = set()                         # Sets are faster for lookups
-    stack = [root_node]                     # Start with a given root node
+    visited = set()  # Sets are faster for lookups
+
+    stack = list()
+    stack.append(root_node)  # Start with a given root node
 
     while len(stack) > 0:                   # Repeat until the stack is empty
-
         current_node = stack.pop()          # Pop out a node added recently
         visited.add(current_node)           # Mark it as visited
 
@@ -76,7 +77,7 @@ nodeP = GraphNode('P')
 nodeH = GraphNode('H')
 nodeS = GraphNode('S')
 
-node_list = [nodeS, nodeH, nodeG, nodeP, nodeR, nodeA]
+node_list = [nodeG, nodeR, nodeA, nodeP, nodeH, nodeS]
 graph = Graph(node_list)
 graph.add_edge(nodeG, nodeR)
 graph.add_edge(nodeA, nodeR)
