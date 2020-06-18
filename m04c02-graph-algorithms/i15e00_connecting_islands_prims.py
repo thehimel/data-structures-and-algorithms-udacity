@@ -10,10 +10,8 @@ return: cost (int) minimum cost of connecting all islands
 import heapq
 
 
+# Helper function to create graph using adjacency list implementation
 def create_graph(num_islands, bridge_config):
-    """
-    Helper function to create graph using adjacency list implementation
-    """
     # A graph can be represented as a adjacency_list,
     # which is a list of blank lists
     graph = [list() for _ in range(num_islands + 1)]
