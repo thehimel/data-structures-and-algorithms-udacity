@@ -1,3 +1,14 @@
+"""
+0-1 Knapsack Problem with Dynamic Programming
+
+Complexity Analysis:
+n = Total number of items
+W = Capacity of the Knapsack
+
+TC: O(n * W) - For every item, traversing through the array of size W.
+SC: O(W) - Creating an array of size W.
+"""
+
 # Helper code
 import collections
 
