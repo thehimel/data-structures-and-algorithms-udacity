@@ -19,6 +19,11 @@ at a price of 3 and sell at a price of 8 to yield a maximum profit of 5.
 In other words, you are looking for the greatest possible difference between
 two numbers in the array.
 
+Simplified Question: Given the list of stock prices. Return the max profit
+that can be achieved by buying the stock at the cheapest prices and selling
+it at the highest price. You have to buy before selling.
+Profit = Selling Price - Buying Price
+
 The Idea
 The given array has the prices of a single stock at 13 different timestamps.
 The idea is to pick two timestamps:
