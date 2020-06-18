@@ -23,7 +23,7 @@ def create_graph(num_islands, bridge_config):
         cost = config[2]
 
         # An entry in a sublist of graph is represented
-        # as a tuple (neighbor, edge_cost)
+        # as a tuple (friend, cost)
         graph[source].append((destination, cost))
         graph[destination].append((source, cost))
 
@@ -40,24 +40,24 @@ def minimum_cost(graph):
     visited = [False for _ in range(len(graph) + 1)]
 
     # Heap is represented as a list of tuples
-    # A "node" in heap is represented as tuple (edge_cost, neighbor)
+    # A "node" in heap is represented as tuple (cost, friend)
     min_heap = [(0, start_vertex)]
     total_cost = 0
 
     while len(min_heap) > 0:
         # Here, heapq.heappop() will automatically pop out the "node" having
-        # smallest edge_cost, and reduce the heap size
+        # smallest cost, and reduce the heap size
         cost, current_vertex = heapq.heappop(min_heap)
 
         # check if current_vertex is already visited
         if visited[current_vertex]:
             continue
 
-        # else add cost to total-cost
+        # else add cost to total_cost
         total_cost += cost
 
-        for neighbor, edge_cost in graph[current_vertex]:
-            heapq.heappush(min_heap, (edge_cost, neighbor))
+        for friend, cost in graph[current_vertex]:
+            heapq.heappush(min_heap, (cost, friend))
 
         # mark current vertex as visited
         visited[current_vertex] = True
