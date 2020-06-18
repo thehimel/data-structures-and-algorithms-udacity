@@ -24,6 +24,9 @@ that can be achieved by buying the stock at the cheapest prices and selling
 it at the highest price. You have to buy before selling.
 Profit = Selling Price - Buying Price
 
+Aim: Our aim is to find the buying price and the selling price such that our
+profit is maximum.
+
 The Idea
 The given array has the prices of a single stock at 13 different timestamps.
 The idea is to pick two timestamps:
