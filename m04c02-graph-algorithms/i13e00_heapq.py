@@ -45,6 +45,7 @@ heapq.heappush(min_heap, (-1, 5))
 heapq.heappush(min_heap, (2, 0))
 heapq.heappush(min_heap, (5, -1))
 heapq.heappush(min_heap, (-1, -1))
+heapq.heappush(min_heap, (2, -1))
 
 print("After pushing, heap: {}".format(min_heap))
 
