@@ -25,6 +25,16 @@ Solution Two
 F[Amount + coin] = min(F(Amount + coin), F(Amount) + 1).
 
 - If F[Amount] is not reachable, F[Amount + coin] = F(Amount + coin).
+
+Complexity Analysis:
+C = Number of coins
+A = Amount
+
+TC: O(C^A) -> O(n^2)
+SC: O(A) -> O(n)
+
+TC: O(n^2)
+SC: O(n)
 """
 
 
