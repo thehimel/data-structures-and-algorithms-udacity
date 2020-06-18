@@ -93,3 +93,8 @@ prices = [78, 54, 45, 37, 34, 23, 18, 12, 9, 9, 7, 2, 2]
 solution = 0
 test_case = [prices, solution]
 test_function(test_case)
+
+prices = [54, 18, 20, 9, 11, 999, 48, 23, 1, 7, 34, 2, 45, 67]
+solution = 990
+test_case = [prices, solution]
+test_function(test_case)
