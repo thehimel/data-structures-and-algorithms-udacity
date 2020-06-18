@@ -93,17 +93,9 @@ graph.add_edge(nodeS, nodeR)
 print(graph.adjacency_list())
 
 # Tests
-# G -> A (1st child of G)
 assert nodeA == dfs_search(nodeG, 'A')
-
-# S -> R -> G -> A
-# S -> R (1st child of S) -> G (1st child of R) -> A (1st child of G)
 assert nodeA == dfs_search(nodeS, 'A')
-
-# P -> R -> S
 assert nodeS == dfs_search(nodeP, 'S')
-
-# H -> G -> A -> R
 assert nodeR == dfs_search(nodeH, 'R')
 print('All tests passed.')
 
