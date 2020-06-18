@@ -41,33 +41,39 @@ def lps(input_string):
     n = len(input_string)
 
     # Create a lookup table to store results of subproblems
-    L = [[0 for x in range(n)] for x in range(n)]
+    LT = [[0 for x in range(n)] for x in range(n)]
 
     # Strings of length 1 have LPS length = 1
     for i in range(n):
-        L[i][i] = 1
+        LT[i][i] = 1
 
     # Consider all substrings
     for s_size in range(2, n+1):
         for start_idx in range(n-s_size+1):
             end_idx = start_idx + s_size - 1
-            if s_size == 2 and input_string[start_idx] == input_string[end_idx]:
+
+            input_string_start = input_string[start_idx]
+            input_string_end = input_string[end_idx]
+
+            if s_size == 2 and input_string_start == input_string_end:
                 # Match with a substring of length 2
-                L[start_idx][end_idx] = 2
-            elif input_string[start_idx] == input_string[end_idx]:
+                LT[start_idx][end_idx] = 2
+
+            elif input_string_start == input_string_end:
                 # General match case
-                L[start_idx][end_idx] = L[start_idx+1][end_idx-1] + 2
+                LT[start_idx][end_idx] = LT[start_idx+1][end_idx-1] + 2
+
             else:
                 # No match case, taking the max of two values
-                x = L[start_idx][end_idx-1]
-                y = L[start_idx+1][end_idx]
-                L[start_idx][end_idx] = max(x, y)
+                x = LT[start_idx][end_idx-1]
+                y = LT[start_idx+1][end_idx]
+                LT[start_idx][end_idx] = max(x, y)
 
     # debug line
     # pp.pprint(L)
 
     # Value in top right corner of matrix
-    return L[0][n-1]
+    return LT[0][n-1]
 
 
 def test_function(test_case):
