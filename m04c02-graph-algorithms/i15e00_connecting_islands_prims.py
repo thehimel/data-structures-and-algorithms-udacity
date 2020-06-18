@@ -41,13 +41,13 @@ def minimum_cost(graph):
 
     # Heap is represented as a list of tuples
     # A "node" in heap is represented as tuple (edge_cost, neighbor)
-    minHeap = [(0, start_vertex)]
+    min_heap = [(0, start_vertex)]
     total_cost = 0
 
-    while len(minHeap) > 0:
+    while len(min_heap) > 0:
         # Here, heapq.heappop() will automatically pop out the "node" having
         # smallest edge_cost, and reduce the heap size
-        cost, current_vertex = heapq.heappop(minHeap)
+        cost, current_vertex = heapq.heappop(min_heap)
 
         # check if current_vertex is already visited
         if visited[current_vertex]:
@@ -57,7 +57,7 @@ def minimum_cost(graph):
         total_cost += cost
 
         for neighbor, edge_cost in graph[current_vertex]:
-            heapq.heappush(minHeap, (edge_cost, neighbor))
+            heapq.heappush(min_heap, (edge_cost, neighbor))
 
         # mark current vertex as visited
         visited[current_vertex] = True
