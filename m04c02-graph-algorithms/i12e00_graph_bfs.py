@@ -41,10 +41,10 @@ class Graph(object):
 
 
 # Solution
-def bfs_search(root_node, target):
+def bfs_search(start_node, target):
     visited = set()  # Sets are faster while lookup.
     queue = list()  # Lists are faster to iterate.
-    queue.append(root_node)
+    queue.append(start_node)
 
     while len(queue) > 0:
         current_node = queue.pop(0)
