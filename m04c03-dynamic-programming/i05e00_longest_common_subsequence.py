@@ -62,7 +62,8 @@ def lcs(string_a, string_b):
 
                 lookup_table[char_a_i + 1][char_b_i + 1] = max_value
 
-    # the bottom-right cell will hold the non-normalized LCS length value.
+    # The bottom-right cell will hold the non-normalized LCS length value.
+    # In python list, last_index = -1
     return lookup_table[-1][-1]
 
 
