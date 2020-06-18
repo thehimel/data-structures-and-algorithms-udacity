@@ -37,6 +37,15 @@ class Graph(object):
             node1.remove_child(node2)
             node2.remove_child(node1)
 
+    def adjacency_list(self):
+        output = list()
+
+        for node in self.nodes:
+            children = [child.value for child in node.children]
+            output.append(children)
+
+        return output
+
 
 # Solution
 def dfs_search(root_node, target):
@@ -68,17 +77,19 @@ nodeH = GraphNode('H')
 nodeS = GraphNode('S')
 
 node_list = [nodeS, nodeH, nodeG, nodeP, nodeR, nodeA]
-graph1 = Graph(node_list)
-graph1.add_edge(nodeG, nodeR)
-graph1.add_edge(nodeA, nodeR)
-graph1.add_edge(nodeA, nodeG)
-graph1.add_edge(nodeR, nodeP)
-graph1.add_edge(nodeH, nodeG)
-graph1.add_edge(nodeH, nodeP)
-graph1.add_edge(nodeS, nodeR)
+graph = Graph(node_list)
+graph.add_edge(nodeG, nodeR)
+graph.add_edge(nodeA, nodeR)
+graph.add_edge(nodeA, nodeG)
+graph.add_edge(nodeR, nodeP)
+graph.add_edge(nodeH, nodeG)
+graph.add_edge(nodeH, nodeP)
+graph.add_edge(nodeS, nodeR)
 
 # Tests
 assert nodeA == dfs_search(nodeS, 'A')
 assert nodeS == dfs_search(nodeP, 'S')
 assert nodeR == dfs_search(nodeH, 'R')
 print('All tests passed.')
+
+print(graph.adjacency_list())
