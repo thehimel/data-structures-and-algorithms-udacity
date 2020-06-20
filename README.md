@@ -96,7 +96,7 @@ Implement Huffman Encoding and Decoding for data compression.
 In the context of groups and users in Windows OS, users can be part of a group and one group can also be a part of another group. In that case, all users of child group become the users of the parent group. If the username/id and group passed as input parameters, return True/False whether the user is part of that group or not. In the place of username/id, a child group name can also be passed.
 
 #### Task 5. Blockchain
-A Blockchain is a sequential chain of records, similar to a linked list. Each block contains some information and how it is connected related to the other blocks in the chain. Each block contains a cryptographic hash of the previous block, a timestamp, and transaction data. For our blockchain we will be using a SHA-256 hash, the Greenwich Mean Time (GMT) when the block was created, and text strings as the data.
+A Blockchain is a sequential chain of records, similar to a linked list. Each block contains some information and how it is connected related to the other blocks in the chain. Each block contains a cryptographic hash of the previous block, a timestamp, and transaction data. For our blockchain, we will be using an SHA-256 hash, the Greenwich Mean Time (GMT) when the block was created, and text strings as the data.
 
 Use your knowledge of linked lists and hashing to create a blockchain implementation.
 
