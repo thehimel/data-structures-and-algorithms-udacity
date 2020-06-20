@@ -141,3 +141,11 @@ Find the smallest and largest integer from a list of unsorted integers. The code
 Implement an HTTP Router like you would find in a typical web server using the Trie data structure.
 
 The purpose of an HTTP Router is to take a URL path like "/", "/about", or "/blog/2019-01-15/my-awesome-blog-post" and figure out what content to return. In a dynamic web server, the content will often come from a block of code called a handler.
+
+### Project 4. Route Planner
+#### About
+Build a route-planner algorithm like the one used in Google Maps to calculate the shortest path between two points on a map.
+
+#### Task
+Given the coordinates of locations as map.interactions and roads as map.roads.
+Using A* algorithm, find the shortest path between 2 locations on the map.
