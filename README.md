@@ -41,3 +41,31 @@ In this Nanodegree program, I have learned various Data Strutures and Algorithms
 	- 0/1 Knapsack
 	- Coin Change
 	- Stock Prices
+
+## Projects
+### Project 1. Unscramble Computer Science Problems
+#### About
+Deconstruct a series of open-ended problems into smaller components (e.g., inputs, output, series of functions).
+
+#### Task 1
+Given the data of calls and text messages of a telemarketing company.
+What is the first record of texts and what is the last record of calls?
+
+#### Task 2
+How many different telephone numbers are there in the records?
+
+#### Task 3
+Which telephone number spent the longest time on the phone during the period? Don't forget that time spent answering a call is also time spent on the phone.
+
+#### Task 4
+- Part 1. Find all of the area codes and mobile prefixes called by people
+in Bangalore.
+- Part 2. What percentage of calls from fixed lines in Bangalore are made
+to fixed lines also in Bangalore?
+
+#### Task 5
+The telephone company want to identify numbers that might be doing telephone marketing. Create a set of possible telemarketers:
+- These numbers make outgoing calls.
+- Never send texts, receive texts or receive incoming calls.
+
+#### Task 6
