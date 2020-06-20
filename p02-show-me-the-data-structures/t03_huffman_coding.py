@@ -1,4 +1,7 @@
 """
+Huffman Algorithm
+Implement Huffman Encoding and Decoding for data compression.
+
 Complexity Analysis:
 -------------------
 
