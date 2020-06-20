@@ -169,4 +169,5 @@ Using A* algorithm, find the shortest path between 2 locations on the map.
 - The incredible team at Udacity
 
 ## Certificate
+#### [Verification Link](https://confirm.udacity.com/SDE7DKXV "Verification Link")
 ![Udacity DSA Nanodegree Certificate](https://github.com/thehimel/data-structures-and-algorithms-udacity/blob/master/certificate/certificate.jpg "Udacity DSA Nanodegree Certificate")
