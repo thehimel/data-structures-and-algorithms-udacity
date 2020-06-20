@@ -1,4 +1,14 @@
 
+"""
+Route Planner
+
+Build a route-planner algorithm like the one used in Google Maps to calculate
+the shortest path between two points on a map.
+
+Given the coordinates of locations as map.interactions and roads as map.roads.
+Using A* algorithm, find the shortest path between 2 locations on the map.
+"""
+
 import math
 import heapq
 
