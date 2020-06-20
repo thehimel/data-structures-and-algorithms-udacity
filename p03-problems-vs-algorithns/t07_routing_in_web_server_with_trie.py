@@ -1,5 +1,13 @@
 """
-Task 7: Routing in a Web Server with a Trie
+Task 7: HTTP Router using a Trie
+
+Implement an HTTP Router like you would find in a typical web server using
+the Trie data structure.
+
+The purpose of an HTTP Router is to take a URL path like "/", "/about", or
+"/blog/2019-01-15/my-awesome-blog-post" and figure out what content to return.
+In a dynamic web server, the content will often come from a block of code
+called a handler.
 
 Complexity Analysis:
 k = length of the path list.
