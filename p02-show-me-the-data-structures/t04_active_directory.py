@@ -1,4 +1,13 @@
 """
+Active Directory
+
+In context of groups and users in Windows OS, users can be part of a group
+and one group can also be a part of another group. In that case all users
+of child group becomes the users of parent group. If the username/id and
+group passed as input parameters, return True/False whether the user is
+part of that group or not. In the place of username/id, a child group name
+can also be passed.
+
 Complexity Analysis:
 -------------------
 Time Complexity:
