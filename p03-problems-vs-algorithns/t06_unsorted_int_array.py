@@ -1,9 +1,9 @@
 """
 Task 6: Unsorted Integer Array
-Max and Min in an Unsorted Array
-In this problem, we will look for smallest and largest integer from a list of
-unsorted integers. The code should run in O(n) time. Do not use Python's
-inbuilt functions to find min and max.
+Find the max and min values in an unsorted array.
+Find the smallest and largest integer from a list of unsorted integers.
+The code should run in O(n) time. Do not use Python's inbuilt functions
+to find min and max.
 
 
 Args: ints(list): list of integers containing one or more integers
