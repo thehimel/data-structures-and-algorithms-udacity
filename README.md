@@ -20,9 +20,9 @@ In this Nanodegree program, I have learned various Data Structures and Algorithm
 ### Big-O Notations
 - O(1)
 - O( n)
-- O(n^2)
 - O(logn)
 - O(nlogn)
+- O(n^2)
 - O(2^n)
 - O(n!)
 
