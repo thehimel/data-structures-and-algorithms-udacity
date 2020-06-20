@@ -2,7 +2,7 @@
 
 ##About the Nanodegree Program
 
-In this Nanodegree program, I have learned various Data Strutures and Algorithms in Computer Science. For each topic, I have solved the given problem that gave me an in-depth knowledge of the concept. I solved 100+ DS and Algorithmic problems and it was quite fun to code in Python.
+In this Nanodegree program, I have learned various Data Strutures and Algorithms in Computer Science. For each topic, I have solved the given problem that gave me an in-depth knowledge of the concept. I solved 100+ DS and Algorithmic problems and it was quite fun to code in Python. All code follows [PEP8 style guidelines](https://www.python.org/dev/peps/pep-0008/ "PEP8 style guidelines").
 
 ## Technologies and Tools
 - Python 3
@@ -11,7 +11,7 @@ In this Nanodegree program, I have learned various Data Strutures and Algorithms
 - Git Bash
 - Pip
 
-## Course Summary
+## Course Contents
 ### Data Structures
 - Arrays, Linked Lists, Stacks and Queues, Recursion, Sets, Maps and Hashing
 - Trees: Binary, Binary Search, Complete Binary, Red-black, Heap
