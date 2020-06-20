@@ -2,7 +2,7 @@
 
 ## About
 
-In this Nanodegree program, I have learned various Data Strutures and Algorithms in Computer Science. For each topic, I have solved the given problem that gave me an in-depth knowledge of the concept. I solved 100+ DS and Algorithmic problems and it was quite fun to code in Python. All code follows [PEP8 style guidelines](https://www.python.org/dev/peps/pep-0008/ "PEP8 style guidelines").
+In this Nanodegree program, I have learned various Data Structures and Algorithms in Computer Science. For each topic, I have solved the given problem that gave me an in-depth knowledge of the concept. I solved 100+ DS and Algorithmic problems and it was quite fun to code in Python. All code follows [PEP8 style guidelines](https://www.python.org/dev/peps/pep-0008/ "PEP8 style guidelines").
 
 ## Technologies and Tools
 - Python 3
@@ -83,7 +83,7 @@ Solve a series if open-ended practice problems. Hone your skills to identify and
 Use an appropriate data structure(s) to implement the LRU cache.
 - In case of a cache hit, your get() operation should return the value.
 - In case of a cache miss, your get() should return -1.
-- While putting an element in the cache, your put() / set() operation must insert the element. If the cache is full, you must write code that removes the least recently used entry first  and then insert the element.
+- While putting an element in the cache, your put() / set() operation must insert the element. If the cache is full, you must write code that removes the least recently used entry first and then insert the element.
 - All operations must take O(1) time.
 
 #### Taks 2. File Recursion
