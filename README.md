@@ -45,6 +45,8 @@ In this Nanodegree program, I have learned various Data Strutures and Algorithms
 
 ## Projects
 ### Project 1. Unscramble Computer Science Problems
+#### [Link](https://github.com/thehimel/data-structures-and-algorithms-udacity/tree/master/p01-telemarking "Link")
+
 #### About
 Deconstruct a series of open-ended problems into smaller components (e.g., inputs, output, series of functions).
 
@@ -72,6 +74,8 @@ The telephone company want to identify numbers that might be doing telephone mar
 #### Task 6
 
 ### Project 2. Show Me the Data Structures
+#### [Link](https://github.com/thehimel/data-structures-and-algorithms-udacity/tree/master/p02-show-me-the-data-structures "Link")
+
 #### About
 Solve a series if open-ended practice problems. Hone your skills to identify and implement appropriate data structures and corresponding methods that meet given constraints.
 
@@ -102,6 +106,8 @@ Implement the union and intersection functions. The union of two sets A and B, A
 You will take in two linked lists and return a linked list that is composed of either the union or intersection, respectively.
 
 ### Project 3. Problems vs. Algorithms
+#### [Link](https://github.com/thehimel/data-structures-and-algorithms-udacity/tree/master/p03-problems-vs-algorithns "Link")
+
 #### About
 A series of real-world problems which train you to apply suitable data structures and algorithms under different contexts.
 
@@ -144,12 +150,17 @@ Implement an HTTP Router like you would find in a typical web server using the T
 The purpose of an HTTP Router is to take a URL path like "/", "/about", or "/blog/2019-01-15/my-awesome-blog-post" and figure out what content to return. In a dynamic web server, the content will often come from a block of code called a handler.
 
 ### Project 4. Route Planner
+#### [Link](https://github.com/thehimel/data-structures-and-algorithms-udacity/tree/master/p04-route-planner "Link")
+
 #### About
 Build a route-planner algorithm like the one used in Google Maps to calculate the shortest path between two points on a map.
 
 #### Task
 Given the coordinates of locations as map.interactions and roads as map.roads.
 Using A* algorithm, find the shortest path between 2 locations on the map.
+
+#### Screenshots
+[Click Here](https://github.com/thehimel/data-structures-and-algorithms-udacity/tree/master/p04-route-planner/output-graphs "Click Here")
 
 ## Author
 - [Himel Das](https://www.linkedin.com/in/himeldas "Himel Das")
