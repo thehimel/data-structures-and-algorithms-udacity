@@ -152,7 +152,7 @@ Given the coordinates of locations as map.interactions and roads as map.roads.
 Using A* algorithm, find the shortest path between 2 locations on the map.
 
 ## Author
-- [Himel Das] (https://www.linkedin.com/in/himeldas)
+- [Himel Das](https://www.linkedin.com/in/himeldas "Himel Das")
 
 ## Acknowledgements
 - The incredible team at Udacity.
