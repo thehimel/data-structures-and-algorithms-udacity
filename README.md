@@ -69,3 +69,33 @@ The telephone company want to identify numbers that might be doing telephone mar
 - Never send texts, receive texts or receive incoming calls.
 
 #### Task 6
+
+### Project 2. Show Me the Data Structures
+#### About
+Solve a series if open-ended practice problems. Hone your skills to identify and implement appropriate data structures and corresponding methods that meet given constraints.
+
+#### Task 1. Least Recently Used (LRU) Cache.
+Use an appropriate data structure(s) to implement the LRU cache.
+- In case of a cache hit, your get() operation should return the value.
+- In case of a cache miss, your get() should return -1.
+- While putting an element in the cache, your put() / set() operation must insert the element. If the cache is full, you must write code that removes the least recently used entry first  and then insert the element.
+- All operations must take O(1) time.
+
+#### Taks 2. File Recursion
+Write code for finding all files under a directory and all directories beneath it that end with ".c". Find all files beneath path with file name suffix.
+
+#### Task 3. Huffman Algorithm
+Implement Huffman Encoding and Decoding for data compression.
+
+#### Task 4. Active Directory
+In context of groups and users in Windows OS, users can be part of a group and one group can also be a part of another group. In that case all users of child group becomes the users of parent group. If the username/id and group passed as input parameters, return True/False whether the user is part of that group or not. In the place of username/id, a child group name can also be passed.
+
+#### Task 5. Blockchain
+A Blockchain is a sequential chain of records, similar to a linked list. Each block contains some information and how it is connected related to the other blocks in the chain. Each block contains a cryptographic hash of the previous block, a timestamp, and transaction data. For our blockchain we will be using a SHA-256 hash, the Greenwich Mean Time (GMT) when the block was created, and text strings as the data.
+
+Use your knowledge of linked lists and hashing to create a blockchain implementation.
+
+#### Task 6. Union and Intersection of Two Linked Lists
+Implement the union and intersection functions. The union of two sets A and B, A ∪ B is the set of elements which are in A, in B, or in both A and B. The intersection of two sets A and B, denoted by A ∩ B, is the set of all elements that are members of both the sets A and B.
+
+You will take in two linked lists and return a linked list that is composed of either the union or intersection, respectively.
