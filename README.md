@@ -9,3 +9,35 @@ In this Nanodegree program, I have learned various Data Strutures and Algorithms
 - Visual Studio Code
 - Git Bash
 - Pip
+
+## Course Summary
+### Data Structures
+- Arrays, Linked Lists, Stacks and Queues, Recursion, Sets, Maps and Hashing
+- Trees: Binary, Binary Search, Complete Binary, Red-black, Heap
+- Tree Traversals: BFS, DFS: In-order, Pre-order, Post-order
+
+### Big-O Notations
+- O(1)
+- O( n)
+- O(n^2)
+- O(logn)
+- O(nlogn)
+- O(2^n)
+- O(n!)
+
+### Basic Algorithms
+- Bubble Sort
+- Merge Sort
+- Quick Sort
+- Heap Sort
+
+### Advanced Algorithms
+- Greedy Algorithms: Dijkstra's Algorithm
+- Graph Algorithms
+	- DFS, BFS
+	- Uniform Cost Search Algorithm
+	- A* Algorithm
+- Dynamic Programming
+	- 0/1 Knapsack
+	- Coin Change
+	- Stock Prices
