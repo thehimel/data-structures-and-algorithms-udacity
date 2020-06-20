@@ -122,12 +122,12 @@ Example: [0, 1, 2, 4, 5, 6, 7] might become [4, 5, 6, 7, 0, 1, 2].
 You are given a target value to search. If found in the array return its index, otherwise return -1. You can assume there are no duplicates in the array and your algorithm's runtime complexity must be in the order of O(log n).
 
 #### Task 3. Rearrange Array Digits
-Rearrange Array Elements so as to form two number such that their sum is maximum. Return these two numbers. You can assume that all array elements are in the range [0, 9]. The number of digits in both the numbers cannot differ by more than 1. You're not allowed to use any sorting function that Python provides and the expected time complexity is O(nlog(n)).
+Rearrange Array Elements so as to form two number such that their sum is maximum. Return these two numbers. You can assume that all array elements are in the range [0, 9]. The number of digits in both numbers cannot differ by more than 1. You're not allowed to use any sorting function that Python provides and the expected time complexity is O(nlog(n)).
 
 For example, [1, 2, 3, 4, 5]
 The expected answer would be [531, 42].
 Another expected answer can be [542, 31].
-If there are more than one possible answers, return any one.
+If there are more than one possible answers, return anyone.
 
 #### Task 4. Dutch National Flag Problem
 Given an input array consisting on only 0, 1, and 2. Sort the array in a single traversal.
