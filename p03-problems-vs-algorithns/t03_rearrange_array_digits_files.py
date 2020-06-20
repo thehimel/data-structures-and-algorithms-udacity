@@ -8,7 +8,7 @@ The number of digits in both the numbers cannot differ by more than 1.
 You're not allowed to use any sorting function that Python provides
 and the expected time complexity is O(nlog(n)).
 
-for e.g. [1, 2, 3, 4, 5]
+For example, [1, 2, 3, 4, 5]
 The expected answer would be [531, 42].
 Another expected answer can be [542, 31].
 If there are more than one possible answers, return any one.
