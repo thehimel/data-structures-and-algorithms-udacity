@@ -130,10 +130,10 @@ Another expected answer can be [542, 31].
 If there are more than one possible answers, return anyone.
 
 #### Task 4. Dutch National Flag Problem
-Given an input array consisting on only 0, 1, and 2. Sort the array in a single traversal.
+Given an input array consisting of only 0, 1, and 2. Sort the array in a single traversal.
 You're not allowed to use any sorting function that Python provides.
 
-Note: O(n) does not necessarily mean single-traversal. For e.g. if you traverse the array twice, that would still be an O(n) solution but it will not count as single traversal.
+Note: O(n) does not necessarily mean single-traversal. For e.g., if you traverse the array twice, that would still be an O(n) solution but it will not count as single traversal.
 
 #### Task 5. Autocomplete with Trie - Finding Suffixes
 Suppose, we have a functioning Trie, we need to add the ability to list suffixes to implement our autocomplete feature. To do that, we need to implement a new function on the TrieNode object that will return all complete word suffixes that exist below it in the trie.
