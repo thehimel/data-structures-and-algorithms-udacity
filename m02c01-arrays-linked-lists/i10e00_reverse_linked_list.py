@@ -42,28 +42,30 @@ class LinkedList:
         return str([v for v in self])
 
 
-# Solution
+"""
+Reverse the inputted linked list
 
-# Time complexity O(N)
+Args:
+    linked_list(obj): Linked List to be reversed
+Returns:
+    obj: Reveresed Linked List
+
+Solution
+A simple idea - Pick a node from the original linked list traversing
+form the beginning, and prepend it to the new linked list.
+We have to use a loop to iterate over the nodes of original linked list
+
+Time complexity: O(n)
+"""
+
+
 def reverse(linked_list):
-    """
-    Reverse the inputted linked list
 
-    Args:
-       linked_list(obj): Linked List to be reversed
-    Returns:
-       obj: Reveresed Linked List
-    """
     new_list = LinkedList()
-
     prev_node = None
 
-    """
-    A simple idea - Pick a node from the original linked list traversing form the beginning,
-        and prepend it to the new linked list.
-    We have to use a loop to iterate over the nodes of original linked list
-    """
-    # In this "for" loop, the "value" is just a variable whose value will be updated in each iteration
+    # In this "for" loop, the "value" is just a variable whose value will be
+    # updated in each iteration
     for value in linked_list:
         # create a new node
         new_node = Node(value)
