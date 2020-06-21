@@ -15,9 +15,6 @@ Returns:
 
 
 def hamming_distance(str1, str2):
-
-
-
     if len(str1) == len(str2):
         count = 0
 
