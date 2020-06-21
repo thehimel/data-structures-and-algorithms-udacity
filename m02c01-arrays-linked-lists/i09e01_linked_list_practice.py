@@ -32,11 +32,10 @@ class LinkedList:
         return out
 
 
-# #### Task 1. Write definition of `prepend()` function and test it
-# Define a function outside of the class
+# Task 1. Write definition of `prepend()` function and test it
+# Define the function outside of the class
+# Prepend a node to the beginning of the list
 def prepend(self, value):
-    """ Prepend a node to the beginning of the list """
-
     if self.head is None:
         self.head = Node(value)
         return
@@ -55,14 +54,13 @@ linked_list.prepend(1)
 assert linked_list.to_list() == [1], f"list contents: {linked_list.to_list()}"
 
 
-# #### Task 2. Write definition of `append()` function and test it
+# Task 2. Write definition of `append()` function and test it
+# Append a node to the end of the list
+# Here I'm not keeping track of the tail. It's possible to store the tail
+# as well as the head, which makes appending like this an O(1) operation.
+# Otherwise, it's an O(N) operation as you have to iterate through the
+# entire list to add a new tail.
 def append(self, value):
-    """ Append a node to the end of the list """
-    # Here I'm not keeping track of the tail. It's possible to store the tail
-    # as well as the head, which makes appending like this an O(1) operation.
-    # Otherwise, it's an O(N) operation as you have to iterate through the
-    # entire list to add a new tail.
-
     if self.head is None:
         self.head = Node(value)
         return
@@ -89,9 +87,10 @@ linked_list.append(3)
 assert linked_list.to_list() == [1, 3], f"list contents: {linked_list.to_list()}"
 
 
-# #### Task 3. Write definition of `search()` function and test it
+# Task 3. Write definition of `search()` function and test it
+# Search the linked list for a node with the requested value
+# and return the node.
 def search(self, value):
-    """ Search the linked list for a node with the requested value and return the node. """
     if self.head is None:
         return None
 
@@ -205,7 +204,7 @@ linked_list.insert(3, 6)
 assert linked_list.to_list() == [5, 2, 1, 4, 3], f"list contents: {linked_list.to_list()}"
 
 
-# #### Task 7. Write definition of `size()` function and test its functionality
+# Task 7. Write definition of `size()` function and test its functionality
 def size(self):
     """ Return the size or length of the linked list. """
     size = 0
