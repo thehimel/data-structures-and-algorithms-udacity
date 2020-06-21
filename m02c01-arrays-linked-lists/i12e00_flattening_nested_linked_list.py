@@ -8,9 +8,6 @@ First, we'll need some code for generating nodes and a linked list:
 """
 
 
-""" Helper code """
-
-
 # A class behaves like a data-type, just like an int,
 #   float or any other built-in ones.
 # User defined class
