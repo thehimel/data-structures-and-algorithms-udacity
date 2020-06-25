@@ -70,13 +70,13 @@ def add_one(arr):
         # The "//" is a floor division operator
         borrow = digit//10
 
+        # Update the arr[i] with the updated digit, and quit the FOR loop.
         if borrow == 0:
-            # Update the arr[i - 1] with the updated digit,
-            #   and quit the FOR loop.
             arr[i] = digit
             break
+
+        # Update the arr[i] with the remainder of (digit % 10)
         else:
-            # Update the arr[i - 1] with the remainder of (digit % 10)
             arr[i] = digit % 10
 
     # Prepend the final "borrow" to the original array.
