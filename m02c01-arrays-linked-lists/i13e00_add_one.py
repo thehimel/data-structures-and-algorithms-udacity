@@ -55,10 +55,12 @@ def add_one(arr):
     # The argument of range() functions are:
     # starting index, ending index (non exclusive),
     #   and the increment/decrement size
-    for i in range(len(arr), 0, -1):
+
+    # for (i=n-1; i >= 0; i--)
+    for i in range(len(arr) - 1, 0 - 1, -1):
         # The "digit" denotes the updated Unit, Tens,
         #   and then Hunderd  position iteratively
-        digit = arr[i - 1] + borrow
+        digit = arr[i] + borrow
 
         '''
         The "borrow" will be carried to the next left digit
@@ -71,11 +73,11 @@ def add_one(arr):
         if borrow == 0:
             # Update the arr[i - 1] with the updated digit,
             #   and quit the FOR loop.
-            arr[i - 1] = digit
+            arr[i] = digit
             break
         else:
             # Update the arr[i - 1] with the remainder of (digit % 10)
-            arr[i - 1] = digit % 10
+            arr[i] = digit % 10
 
     # Prepend the final "borrow" to the original array.
     arr = [borrow] + arr
@@ -143,31 +145,17 @@ Return [1, 0, 0, 0]
 '''
 
 
-# A helper function for Test Cases
-def test_function(test_case):
-    arr = test_case[0]
-    solution = test_case[1]
-
-    output = add_one(arr)
-    for index, element in enumerate(output):
-        if element != solution[index]:
-            print("Fail")
-            return
-    print("Pass")
+# Test
+def test(input, output):
+    print("Pass" if add_one(input) == output else "Fail")
 
 
-# Test Case 1
-arr = [0]
-solution = [1]
-test_case = [arr, solution]
-test_function(test_case)
-# Test Case 2
-arr = [1, 2, 3]
-solution = [1, 2, 4]
-test_case = [arr, solution]
-test_function(test_case)
-# Test Case 3
-arr = [9, 9, 9]
-solution = [1, 0, 0, 0]
-test_case = [arr, solution]
-test_function(test_case)
+test([0], [1])
+
+input = [1, 2, 3]
+output = [1, 2, 4]
+test(input, output)
+
+input = [9, 9, 9]
+output = [1, 0, 0, 0]
+test(input, output)
