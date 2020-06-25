@@ -10,9 +10,7 @@ arr = [0, 2, 3, 1, 4, 5, 3]
 output = 3 (because 3 is present twice)
 The expected time complexity for this problem is O(n)
 and the expected space-complexity is O(1).
-"""
 
-"""
 Notice carefully that
 1. All the elements of the array are always non-negative
 2. If array length = n, then elements would start from 0 to (n-2),
@@ -23,17 +21,29 @@ Therefore let's find the sum of all elements (current_sum)
     of the original array, and find the sum of first (n-2)
     Natural numbers (expected_sum).
 
+
 Trick:
 The second occurance of a particular number (say `x`)
 is actually occupying the space that would have been utilized
 by the number (n-1). This leads to:
-current_sum  = 0 + 1 + 2 + 3 + .... + (n-2) + x
 expected_sum = 0 + 1 + 2 + 3 + .... + (n-2)
-current_sum - expected_sum = x
+current_sum  = 0 + 1 + 2 + 3 + .... + (n-2) + x
+x = current_sum - expected_sum
 Tada!!! :)
-"""
 
-"""
+arr = [0, 1, 2, 3, 4, 5, 5]
+n = 7, n-2 = 5
+expected_sum = 0+1+2+3+4+5 = 15
+current_sum = 0+1+2+3+4+5+5 = 20
+x = 20-15 = 5
+
+arr = [0, 1, 2, 3, 3, 4, 5]
+n = 7, n-2 = 5
+expected_sum = 0+1+2+3+4+5 = 15
+current_sum = 0+1+2+3+3+4+5 = 18
+x = 18-15 = 3
+
+
 Traverse from 0 to (length of array-1) to get the expected_sum
 Alternatively, you can use the formula for sum of
 an Arithmetic Progression to get the expected_sum
@@ -49,10 +59,10 @@ def duplicate_number(arr):
     current_sum = 0
     expected_sum = 0
 
+    # for (i=0; i<=n-2; i++)
     for i in range(len(arr) - 1):
         expected_sum += i
 
-    # Traverse the original array in the forward direction
     for num in arr:
         current_sum += num
 
@@ -61,32 +71,26 @@ def duplicate_number(arr):
 
 
 # Test
-def test_function(test_case):
-    arr = test_case[0]
-    solution = test_case[1]
-    output = duplicate_number(arr)
-    if output == solution:
-        print("Pass")
-    else:
-        print("Fail")
+def test(arr, output):
+    print("Pass" if output == duplicate_number(arr) else "Fail")
 
 
 arr = [0, 0]
-solution = 0
-test_case = [arr, solution]
-test_function(test_case)
+output = 0
+test(arr, output)
+
 arr = [0, 2, 3, 1, 4, 5, 3]
-solution = 3
+output = 3
+test(arr, output)
 
-test_case = [arr, solution]
-test_function(test_case)
+arr = [0, 2, 3, 1, 4, 5, 5]
+output = 5
+test(arr, output)
+
 arr = [0, 1, 5, 4, 3, 2, 0]
-solution = 0
+output = 0
+test(arr, output)
 
-test_case = [arr, solution]
-test_function(test_case)
 arr = [0, 1, 5, 5, 3, 2, 4]
-solution = 5
-
-test_case = [arr, solution]
-test_function(test_case)
+output = 5
+test(arr, output)
