@@ -70,6 +70,7 @@ def even_after_odd(head):
                 odd_tail.next = current
                 odd_tail = odd_tail.next
 
+        # To prevent the cycle in the linked list
         next_node = current.next
         current.next = None
         current = next_node
@@ -144,6 +145,12 @@ test_function(test_case)
 
 arr = [2, 4, 6, 8]
 solution = [2, 4, 6, 8]
+head = create_linked_list(arr)
+test_case = [head, solution]
+test_function(test_case)
+
+arr = [100, 25, 99, 88, 3, 2, 78]
+solution = [25, 99, 3, 100, 88, 2, 78]
 head = create_linked_list(arr)
 test_case = [head, solution]
 test_function(test_case)
