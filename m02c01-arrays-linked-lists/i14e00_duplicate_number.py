@@ -56,8 +56,8 @@ It means that if the array length = n, loop will run form 0 to (n-2)
 
 
 def duplicate_number(arr):
-    current_sum = 0
     expected_sum = 0
+    current_sum = 0
 
     # for (i=0; i<=n-2; i++)
     for i in range(len(arr) - 1):
