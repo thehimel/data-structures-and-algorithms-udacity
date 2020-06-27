@@ -79,4 +79,5 @@ node = linked_list.head.next.next
 print("Pass" if (node.value == 4) else "Fail")
 
 # Main test
-print("Pass" if (sort([4, 8, 2, 1, -3, 1, 5]) == [-3, 1, 1, 2, 4, 5, 8]) else "Fail")
+print("Pass" if (
+    sort([4, 8, 2, 1, -3, 1, 5]) == [-3, 1, 1, 2, 4, 5, 8]) else "Fail")
