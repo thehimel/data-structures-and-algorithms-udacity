@@ -1,7 +1,5 @@
 def prod(a, b):
-    # TODO change output to the product of a and b
-    output = a * b
-    return output
+    return a * b
 
 
 def fact_gen():
@@ -10,7 +8,7 @@ def fact_gen():
     while True:
         output = prod(n, i)
         yield output
-        # TODO: update i and n
+
         # Hint: i is a successive integer and n is the previous product
         n = output
         i += 1
