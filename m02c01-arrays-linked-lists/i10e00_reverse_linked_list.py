@@ -48,7 +48,7 @@ Reverse the inputted linked list
 Args:
     linked_list(obj): Linked List to be reversed
 Returns:
-    obj: Reveresed Linked List
+    obj: Reversed Linked List
 
 Solution
 A simple idea - Pick a node from the original linked list traversing
@@ -90,7 +90,8 @@ for value in [4, 2, 5, 1, -3, 0]:
     llist.append(value)
 
 flipped = reverse(llist)
-is_correct = list(flipped) == list([0, -3, 1, 5, 2, 4]) and list(llist) == list(reverse(flipped))
+is_correct = list(flipped) == list(
+    [0, -3, 1, 5, 2, 4]) and list(llist) == list(reverse(flipped))
 print("Pass" if is_correct else "Fail")
 
 # print(llist.head.value)
