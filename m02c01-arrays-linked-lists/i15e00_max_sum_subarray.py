@@ -1,6 +1,6 @@
 """
 Problem Statement
-You have been given an array containg numbers. Find and return the largest sum
+You have been given an array contaning numbers. Find and return the largest sum
 in a contiguous subarray within the input array.
 
 Example 1:
