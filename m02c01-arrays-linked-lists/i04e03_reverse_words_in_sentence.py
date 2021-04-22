@@ -19,8 +19,8 @@ s[::-1] = 'ytic adu'
 def word_flipper(our_string):
     word_list = our_string.split(" ")
 
-    for word in range(len(word_list)):
-        word_list[word] = word_list[word][::-1]
+    for i, word in enumerate(word_list):
+        word_list[i] = word[::-1]
 
     return " ".join(word_list)
 
