@@ -1,4 +1,4 @@
-# Recusive DFS Solution by LeetCode user leetcode.com/caikehe (More Readable)
+# Reccursive DFS Solution by LeetCode user leetcode.com/caikehe (More Readable)
 # https://leetcode.com/problems/permutations/discuss/18296/Simple-Python-solution-(DFS)
 """
 Given a list of numbers, find the list of lists made
