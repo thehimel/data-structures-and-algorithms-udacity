@@ -23,7 +23,7 @@ Therefore let's find the sum of all elements (current_sum)
 
 
 Trick:
-The second occurance of a particular number (say `x`)
+The second occurrence of a particular number (say `x`)
 is actually occupying the space that would have been utilized
 by the number (n-1). This leads to:
 expected_sum = 0 + 1 + 2 + 3 + .... + (n-2)
