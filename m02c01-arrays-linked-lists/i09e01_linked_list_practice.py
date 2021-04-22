@@ -1,7 +1,7 @@
 """
 Linked List Practice
 Implement a linked list class. You have to define a few functions that perform
-the desirbale action. Your LinkedList class should be able to:
+the desirable action. Your LinkedList class should be able to:
 
 - Append data to the tail of the list and prepend to the head
 - Search the linked list for a value and return the node
@@ -77,14 +77,16 @@ LinkedList.append = append
 # Test append - 1 item
 linked_list.prepend(2)
 linked_list.append(3)
-assert linked_list.to_list() == [2, 1, 3], f"list contents: {linked_list.to_list()}"
+assert linked_list.to_list() == [
+    2, 1, 3], f"list contents: {linked_list.to_list()}"
 
 # Test append - 2 items
 linked_list = LinkedList()
 linked_list.append(1)
 assert linked_list.to_list() == [1], f"list contents: {linked_list.to_list()}"
 linked_list.append(3)
-assert linked_list.to_list() == [1, 3], f"list contents: {linked_list.to_list()}"
+assert linked_list.to_list() == [
+    1, 3], f"list contents: {linked_list.to_list()}"
 
 
 # Task 3. Write definition of `search()` function and test it
@@ -110,8 +112,10 @@ linked_list.prepend(2)
 linked_list.prepend(1)
 linked_list.append(4)
 linked_list.append(3)
-assert linked_list.search(1).value == 1, f"list contents: {linked_list.to_list()}"
-assert linked_list.search(4).value == 4, f"list contents: {linked_list.to_list()}"
+assert linked_list.search(
+    1).value == 1, f"list contents: {linked_list.to_list()}"
+assert linked_list.search(
+    4).value == 4, f"list contents: {linked_list.to_list()}"
 
 
 # #### Task 4. Write definition of `remove()` function and test it
@@ -138,11 +142,14 @@ LinkedList.remove = remove
 
 # Test remove
 linked_list.remove(1)
-assert linked_list.to_list() == [2, 1, 3, 4, 3], f"list contents: {linked_list.to_list()}"
+assert linked_list.to_list() == [2, 1, 3, 4,
+                                 3], f"list contents: {linked_list.to_list()}"
 linked_list.remove(3)
-assert linked_list.to_list() == [2, 1, 4, 3], f"list contents: {linked_list.to_list()}"
+assert linked_list.to_list() == [
+    2, 1, 4, 3], f"list contents: {linked_list.to_list()}"
 linked_list.remove(3)
-assert linked_list.to_list() == [2, 1, 4], f"list contents: {linked_list.to_list()}"
+assert linked_list.to_list() == [
+    2, 1, 4], f"list contents: {linked_list.to_list()}"
 
 
 # #### Task 5. Write definition of `pop()` function and test its functionality
@@ -197,11 +204,14 @@ LinkedList.insert = insert
 
 # Test insert
 linked_list.insert(5, 0)
-assert linked_list.to_list() == [5, 1, 4], f"list contents: {linked_list.to_list()}"
+assert linked_list.to_list() == [
+    5, 1, 4], f"list contents: {linked_list.to_list()}"
 linked_list.insert(2, 1)
-assert linked_list.to_list() == [5, 2, 1, 4], f"list contents: {linked_list.to_list()}"
+assert linked_list.to_list() == [
+    5, 2, 1, 4], f"list contents: {linked_list.to_list()}"
 linked_list.insert(3, 6)
-assert linked_list.to_list() == [5, 2, 1, 4, 3], f"list contents: {linked_list.to_list()}"
+assert linked_list.to_list() == [5, 2, 1, 4,
+                                 3], f"list contents: {linked_list.to_list()}"
 
 
 # Task 7. Write definition of `size()` function and test its functionality
