@@ -42,10 +42,7 @@ def anagram_checker(str1, str2):
     clean_str_1 = str1.replace(" ", "").lower()
     clean_str_2 = str2.replace(" ", "").lower()
 
-    if sorted(clean_str_1) == sorted(clean_str_2):
-        return True
-
-    return False
+    return sorted(clean_str_1) == sorted(clean_str_2)
 
 
 def test(str1, str2, output):
