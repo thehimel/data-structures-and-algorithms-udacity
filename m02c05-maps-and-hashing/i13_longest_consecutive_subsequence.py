@@ -59,7 +59,8 @@ def longest_consecutive_subsequence(input_list):
         current = element - 1  # `current` is the expected number
 
         while current in element_dict and element_dict[current] > 0:
-            current_starts = element_dict[current]  # index of smallest element in the current subsequence
+            # index of smallest element in the current subsequence
+            current_starts = element_dict[current]
             current_count += 1  # increment the length of subsequence
             element_dict[current] = -1
             current -= 1
@@ -68,13 +69,17 @@ def longest_consecutive_subsequence(input_list):
         if current_count >= max_length:
             if current_count == max_length and current_starts > starts_at:
                 continue
-            starts_at = current_starts  # index of smallest element in the current (longest so far) subsequence
-            max_length = current_count  # store the length of current (longest so far) subsequence
+            # index of smallest element in the current (longest so far) subsequence
+            starts_at = current_starts
+            # store the length of current (longest so far) subsequence
+            max_length = current_count
 
-    start_element = input_list[starts_at]  # smallest element in the longest subsequence
+    # smallest element in the longest subsequence
+    start_element = input_list[starts_at]
 
     # return a NEW list starting from `start_element` to `(start_element + max_length)`
-    return [element for element in range(start_element, start_element + max_length)]
+    return [element for element in range(
+        start_element, start_element + max_length)]
 
 
 # Test
@@ -88,7 +93,8 @@ def test_function(test_case):
 
 test_case_1 = [[5, 4, 7, 10, 1, 3, 55, 2], [1, 2, 3, 4, 5]]
 test_function(test_case_1)
-test_case_2 = [[2, 12, 9, 16, 10, 5, 3, 20, 25, 11, 1, 8, 6 ], [8, 9, 10, 11, 12]]
+test_case_2 = [[2, 12, 9, 16, 10, 5, 3, 20,
+                25, 11, 1, 8, 6], [8, 9, 10, 11, 12]]
 test_function(test_case_2)
 test_case_3 = [[0, 1, 2, 3, 4], [0, 1, 2, 3, 4]]
 test_function(test_case_3)
