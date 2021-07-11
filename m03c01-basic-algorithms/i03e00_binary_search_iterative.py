@@ -41,7 +41,7 @@ def binary_search(array, target):
             end_index = mid_index - 1
 
         else:
-            start_index = mid_element + 1
+            start_index = mid_index + 1
 
     return -1
 
